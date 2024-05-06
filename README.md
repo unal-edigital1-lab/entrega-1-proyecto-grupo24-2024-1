@@ -47,3 +47,12 @@ Los diferentes estados de animo q puede tener la mascota.
 *	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha.
 *	Estado excelente: todas las necesidades están en el máximo posible, entrar en este estado suma instantáneamente 5 puntos a la puntuación (explicado anteriormente).
 
+## Interacciones
+* Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
+* Salud: 1 nivel cada 10 minutos
+* Comida: 1 nivel cada 5 minutos
+* Energía: 1 Nivel cada 7 minutos
+* Entretenimiento: 1 Nivel cada 3 minutos
+* Higiene: 1 nivel cada 7 minutos
+
+
