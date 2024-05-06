@@ -118,3 +118,5 @@ matriz de LEDs.
 * Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
 ## Sensor ultrasonido: 
 * Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “Cercanía”, la cual tiene diferentes interacciones con los modulos diseñados de la fpga.
+## Sensor de luz: 
+* Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “claridad”, la cual tiene diferentes interacciones explicadas posteriormente.
