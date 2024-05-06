@@ -75,4 +75,10 @@ Cada estado del tamaguchi definido se representa en el color del tamaguchi y nos
 *	Estado desolado: Gris 
 *	Estado muerte: Blanco
 
+## lenguaje adecuado para describir el sistema:Para la descripción:
+Para la programación del sistema Tamagotchi, se utilizará el lenguaje de descripción de hardware
+Verilog. Verilog es un lenguaje de alto nivel diseñado específicamente para la descripción y
+síntesis de circuitos digitales, lo cual lo hace adecuado para el desarrollo de sistemas en
+FPGA.
+
 
