@@ -85,3 +85,12 @@ FPGA.
 ![caja negra1](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/bcd171d5-6fd7-4b43-a5c0-62f3c2911a57)
 
 # Arquitectura del sistema:
+## FPGA Altera Cyclone IV:
+* Funcionalidad: Ejecutar la lógica de control y procesamiento del
+Tamagotchi, incluyendo la máquina de estados, la gestión de los estados y
+necesidades de la mascota, y la generación de las señales de visualización.
+* Implementación en HDL: La mayor parte de la lógica del Tamagotchi se
+implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
+módulos para organizar el diseño.
+* Conexión: La FPGA se conectará a los diversos periféricos a través de
+interfaces digitales.
