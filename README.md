@@ -27,12 +27,12 @@ Se obtendrá puntuación por cada vez que se satisfagan las necesidades de la ma
 
 ## Estados: 
 Los diferentes estados de animo q puede tener la mascota.
-•	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo
-•	Estado dormido: el tamaguchi se encuentra dormido
-•	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo
-•	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo
-•	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo
-•	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo
-•	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha.
-•	Estado excelente: todas las necesidades están en el máximo posible, entrar en este estado suma instantáneamente 5 puntos a la puntuación (explicado anteriormente).
+*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo
+*	Estado dormido: el tamaguchi se encuentra dormido
+*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo
+*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo
+*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo
+*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo
+*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha.
+*	Estado excelente: todas las necesidades están en el máximo posible, entrar en este estado suma instantáneamente 5 puntos a la puntuación (explicado anteriormente).
 
