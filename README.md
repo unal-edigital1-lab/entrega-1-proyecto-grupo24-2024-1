@@ -24,3 +24,15 @@ Se obtendrá puntuación por cada vez que se satisfagan las necesidades de la ma
 * +5 puntos bonus si todas las necesidades se encuentran satisfechas al tiempo (esto genera una especie de racha para acumular puntos en cadena)
 * -1 punto cada 10 segundos si una sola necesidad se encuentra por debajo del nivel 3 de satisfacción (esto es acumulable por cada necesidad, es decir, si 4 necesidades se encuentran por debajo del nivel 3 de satisfacción, se  perderán 4 puntos cada 10 segundos)
 * -1 puntos por cada segundo extra si al menos 2 necesidades se encuentran en el nivel mínimo de satisfacción.
+
+## Estados: 
+Los diferentes estados de animo q puede tener la mascota.
+•	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo
+•	Estado dormido: el tamaguchi se encuentra dormido
+•	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo
+•	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo
+•	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo
+•	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo
+•	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha.
+•	Estado excelente: todas las necesidades están en el máximo posible, entrar en este estado suma instantáneamente 5 puntos a la puntuación (explicado anteriormente).
+
