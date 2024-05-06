@@ -13,6 +13,14 @@ Se contarán con 4 botones para interacción (“dormir”, “curar”, “alim
 ## Sensores:
 Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz que es simplemente una Fotorresistencia en un divisor de tensión que pasara al ADC del Arduino.
 
+## FPGA Altera Cyclone IV:
+* Funcionalidad: Ejecutar la lógica de control y procesamiento del
+Tamagotchi, incluyendo la máquina de estados, la gestión de los estados y
+necesidades de la mascota, y la generación de las señales de visualización.
+* Implementación en HDL: La mayor parte de la lógica del Tamagotchi se
+implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
+módulos para organizar el diseño.
+
 ## Necesidades:
 Energía, salud, comida, Entretenimiento, higiene. (estas necesidades se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
 
