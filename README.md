@@ -94,7 +94,7 @@ implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
 módulos para organizar el diseño.
 * Conexión: La FPGA se conectará a los diversos periféricos a través de
 interfaces digitales.
-## Matriz de LED RGB:
+## Matriz de LED´s RGB:
 * Funcionalidad: Visualizar de estados y barras de las animaciones del
 Tamagotchi en una matriz de LEDs 8x8.
 * Implementación en HDL: Se diseñará diferentes modulos en Verilog que se encarguen
