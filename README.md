@@ -116,3 +116,5 @@ matriz de LEDs.
 ## Boton Test:
 * Funcionalidad y implementacion:Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre los estados definidos anteriormente, con las condiciones especificadas ya sea el estado “hambriento” en donde todas las necesidades estarán en 7 a excepción de la necesidad “comida” que se encontrara en 5, y así sucesivamente.
 * Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
+## Sensor ultrasonido: 
+*Funcionalidad y implementacion:De un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “Cercanía”, la cual tiene diferentes interacciones con los modulos diseñados de la fpga.
