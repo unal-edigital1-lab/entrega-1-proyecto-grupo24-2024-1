@@ -85,6 +85,16 @@ FPGA.
 ![caja negra1](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/bcd171d5-6fd7-4b43-a5c0-62f3c2911a57)
 
 # Arquitectura del sistema:
+## Trabajara con arquitectura modular
+* La FPGA Cyclone IV actuará como el núcleo del sistema, integrando los diferentes módulos
+funcionales.
+* Cada módulo se encargará de una tarea específica, como la lógica de control, la máquina
+de estados, la interfaz con los dispositivos, la visualización, etc.
+* Los módulos se comunicarán entre sí a través de interfaces bien definidas, lo que permite
+una mayor modularidad y flexibilidad en el diseño.
+* Esta arquitectura modular facilita el desarrollo, la depuración y la posible expansión o
+reemplazo de componentes en el futuro.
+
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
 Tamagotchi, incluyendo la máquina de estados, la gestión de los estados y
