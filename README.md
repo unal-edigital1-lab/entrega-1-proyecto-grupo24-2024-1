@@ -16,7 +16,8 @@ Se contarán con 4 botones para interacción (“dormir”, “curar”, “alim
 ## Sensores:
 Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz que es simplemente una Fotorresistencia en un divisor de tensión que pasara al ADC del Arduino.
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d1235189-a15c-4f55-a19b-f5aee781f6fa)
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/97e4c0da-7e6d-48f8-b4da-a722fdf197f8)
+
 
 
 
