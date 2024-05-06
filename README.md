@@ -100,3 +100,7 @@ Tamagotchi en una matriz de LEDs 8x8.
 * Implementación en HDL: Se diseñará diferentes modulos en Verilog que se encarguen
 de generar las señales de control y datos necesarios para actualizar la
 matriz de LEDs.
+## Boton reset: 
+*Funcionalidad y implementacion: Cuando el botón de reset se mantiene presionado durante más de 5 segundos en el Tamagotchi, el dispositivo transiciona al estado "bien" y todas las necesidades se establecen en un valor de 7. Además, el contador de puntuación se reinicia a 0. En caso de que el Tamagotchi estuviera en modo de prueba, cambiará al modo "normal", donde las necesidades variarán con el tiempo.
+*Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
+
