@@ -65,7 +65,6 @@ Cada estado del tamaguchi definido se representa en el color del tamaguchi y nos
 *	Estado sucio: café 
 *	Estado bien: Verde
 *	Estado excelente: Verde claro
-*	Estado depresión: (Según las necesidades, explicado anteriormente) 
 *	Estado desolado: Gris 
 *	Estado muerte: Blanco
 
