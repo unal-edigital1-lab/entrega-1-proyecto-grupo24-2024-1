@@ -55,4 +55,18 @@ Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 * Entretenimiento: 1 Nivel cada 3 minutos
 * Higiene: 1 nivel cada 7 minutos
 
+## Colores:
+Cada estado del tamaguchi definido se representa en el color del tamaguchi y nos muestra claramente cuál es su estado, esto se describe como sigue.
+*	Estado cansado: Azul
+*	Estado dormido: Morado
+*	Estado Hambriento: amarillo
+*	Estado enfermo: rojo
+*	Estado aburrido: naranja
+*	Estado sucio: café 
+*	Estado bien: Verde
+*	Estado excelente: Verde claro
+*	Estado depresión: (Según las necesidades, explicado anteriormente) 
+*	Estado desolado: Gris 
+*	Estado muerte: Blanco
+
 
