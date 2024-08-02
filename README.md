@@ -3,6 +3,12 @@
 * Camilo Prieto Gomez-1000364337
 * Tait Mozuca Tamayo - 1193560405
 * Leidy Pinto Ramos - 1000787494
+
+## Sistema de caja negra:
+
+
+
+
 # Especificación de los sistemas que conforman el proyecto:
 ## Sistema de visualización: 
 
@@ -80,8 +86,7 @@ Verilog. Verilog es un lenguaje de alto nivel diseñado específicamente para la
 síntesis de circuitos digitales, lo cual lo hace adecuado para el desarrollo de sistemas en
 FPGA.
 
-## Sistema de caja negra:
-![caja negra1](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/bcd171d5-6fd7-4b43-a5c0-62f3c2911a57)
+
 
 # Arquitectura del sistema:
 ## Trabajara con arquitectura modular
