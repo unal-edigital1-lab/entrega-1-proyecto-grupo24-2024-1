@@ -14,7 +14,7 @@ El proyecto esta conformado por los siguientes elementos:
 
 ## Sistema de botones: 
 Se contarán con 6 botones para interacción:
-### Alimentar:
+**Alimentar** Al ser presionado, inicia animación de comer y sube la necesidad de alimentación 1 unidad. 
 ### Curar:
 ### Limpiar:
 ### Dormir:
