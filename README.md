@@ -13,14 +13,15 @@
 El proyecto esta conformado por los siguientes elementos:
 
 ## Sistema de botones: 
-Se contarán con 6 botones para interacción (cabe aclarar que se utilizara botones antirrebote digitales):
+Se contarán con 7 botones para interacción (cabe aclarar que se utilizara botones antirrebote digitales):
 
  1. **Alimentar:** Al ser presionado, inicia animación de comer y sube la necesidad de alimentación 1 unidad. 
  2. **Curar:** Al ser presionado, suba la necesidad de curación 1 unidad.
  3. **Limpiar:** Al ser presionado, suba la necesidad de higiene 1 unidad.
  4. **Dormir**: Al ser presionado, pondrá al tamaguchi en el estado “dormido”, al mantenerse en dicho estado por cierto tiempo aumentara energia en 1 unidad
  5. **Reset**: Al presionar el botón reset por mas de 5 segundos el tamaguchi salta al estado “bien” con todas las necesidades en el valor 7. 
- 6. **Test**: Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre todos estados del tamagushi
+ 6. **Test**: Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre todos estados del tamagushi.
+ 7. **Acelerador**: Este botón permite que se cambie la velocidad con la que disminuyen las necesidades del tamaguchi, siendo el modo predeterminado 1X, los otros modos posibles son 2X, 5X, 10X y 30X.
 
 ## Sistema de Sensores:
 Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz
