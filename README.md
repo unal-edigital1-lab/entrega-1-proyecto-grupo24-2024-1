@@ -104,6 +104,9 @@ FPGA.
 
 
 # Arquitectura del sistema:
+![TRABAJO](https://github.com/user-attachments/assets/84d2d35c-c763-4d6e-b344-3ef9a80ce6c7)
+
+
 ## Trabajará con arquitectura modular
 * La FPGA Cyclone IV actuará como el núcleo del sistema, integrando los diferentes módulos
 funcionales.
