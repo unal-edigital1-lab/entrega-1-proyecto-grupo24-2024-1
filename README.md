@@ -6,7 +6,6 @@
 
 ## Sistema de caja negra:
 
-![Uploading caja negra final (1).jpg…]()
 
 
 
