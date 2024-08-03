@@ -104,7 +104,7 @@ FPGA.
 
 
 # Arquitectura del sistema:
-## Trabajara con arquitectura modular
+## Trabajará con arquitectura modular
 * La FPGA Cyclone IV actuará como el núcleo del sistema, integrando los diferentes módulos
 funcionales.
 * Cada módulo se encargará de una tarea específica, como la lógica de control, la máquina
@@ -125,7 +125,7 @@ módulos para organizar el diseño.
 interfaces digitales.
 ## Matriz de LED´s RGB:
 * Funcionalidad: Visualizar de estados y barras de las animaciones del
-Tamagotchi en una matriz de LEDs 8x8.
+Tamagotchi en dos matrices de LEDs 8x8.
 * Implementación en HDL: Se diseñará diferentes modulos en Verilog que se encarguen
 de generar las señales de control y datos necesarios para actualizar la
 matriz de LEDs.
@@ -135,7 +135,9 @@ matriz de LEDs.
 ## Boton Test:
 * Funcionalidad y implementacion:Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre los estados definidos anteriormente, con las condiciones especificadas ya sea el estado “hambriento” en donde todas las necesidades estarán en 7 a excepción de la necesidad “comida” que se encontrara en 5, y así sucesivamente.
 * Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
+## Boton Acelerador: 
+Permite acelerar el tiempo en la modalidad de juego del tamagushi, afectando las necesidades de forma mas rapida y haciendo que el nivel de juego sea mucho mas complicado.
 ## Sensor ultrasonido: 
 * Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “Cercanía”, la cual tiene diferentes interacciones con los modulos diseñados de la fpga.
 ## Sensor de luz: 
-* Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “claridad”, la cual tiene diferentes interacciones explicadas posteriormente.
+* Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “claridad”, la cual tiene diferentes interacciones explicadas anteriormente.
