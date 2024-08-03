@@ -6,7 +6,8 @@
 
 ## Sistema de caja negra:
 
-![caja negra final](https://github.com/user-attachments/assets/313e45b0-73eb-4b56-a649-a860bd407d84)
+![si te vas](https://github.com/user-attachments/assets/ef7315fd-24a1-4c26-b7f1-82160870b605)
+
 
 
 
