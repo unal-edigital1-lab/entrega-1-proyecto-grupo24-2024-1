@@ -8,6 +8,7 @@
 
 
 
+![caja negra final (1)_page-0001](https://github.com/user-attachments/assets/4e495636-07b0-4427-9dcc-ca44fc347bea)
 
 
 
