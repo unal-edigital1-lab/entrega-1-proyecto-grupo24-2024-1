@@ -63,6 +63,17 @@ El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda 
 * Entretenimiento
 * higiene
 
+## Estados: 
+La mascota virtual contara con 11 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
+*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo
+*	Estado dormido: el tamaguchi se encuentra dormido
+*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo
+*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo
+*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo
+*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo
+*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha.
+*	Estado excelente: todas las necesidades están en el máximo posible, entrar en este estado suma instantáneamente 5 puntos a la puntuación (explicado anteriormente).
+
 ## Sistema de puntuación:
 
 Se obtendrá puntuación por cada vez que se satisfagan las necesidades de la mascota, y se perderán si esta se descuida. La puntuación se reflejará en el display 7 segmentos. La puntuación funcionara así:
@@ -72,16 +83,7 @@ Se obtendrá puntuación por cada vez que se satisfagan las necesidades de la ma
 * -1 punto cada 10 segundos si una sola necesidad se encuentra por debajo del nivel 3 de satisfacción (esto es acumulable por cada necesidad, es decir, si 4 necesidades se encuentran por debajo del nivel 3 de satisfacción, se  perderán 4 puntos cada 10 segundos)
 * -1 puntos por cada segundo extra si al menos 2 necesidades se encuentran en el nivel mínimo de satisfacción.
 
-## Estados: 
-Los diferentes estados de animo q puede tener la mascota.
-*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo
-*	Estado dormido: el tamaguchi se encuentra dormido
-*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo
-*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo
-*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo
-*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo
-*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha.
-*	Estado excelente: todas las necesidades están en el máximo posible, entrar en este estado suma instantáneamente 5 puntos a la puntuación (explicado anteriormente).
+
 
 ## Interacciones
 Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
