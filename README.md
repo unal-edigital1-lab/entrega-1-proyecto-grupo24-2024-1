@@ -10,7 +10,7 @@
 ![tamaboring](https://github.com/user-attachments/assets/7ae1a630-79dd-41e6-862a-65f8cbbb5f8f)
 
 
-
+El proyecto esta conformado por los siguientes elementos:
 
 
 ## Sistema de visualización: 
