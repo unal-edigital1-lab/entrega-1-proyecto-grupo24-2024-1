@@ -1,4 +1,4 @@
- # Entrega 1 del proyecto WP01
+ # Entrega 1 del proyecto Tamagotchi Electronica Digital I
 
 * Camilo Prieto Gomez-1000364337
 * Tait Mozuca Tamayo - 1193560405
