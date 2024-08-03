@@ -139,7 +139,7 @@ matriz de LEDs.
 * Funcionalidad y implementacion:Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre los estados definidos anteriormente, con las condiciones especificadas ya sea el estado “hambriento” en donde todas las necesidades estarán en 7 a excepción de la necesidad “comida” que se encontrara en 5, y así sucesivamente.
 * Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
 ## Boton Acelerador: 
-Permite acelerar el tiempo en la modalidad de juego del tamagushi, afectando las necesidades de forma mas rapida y haciendo que el nivel de juego sea mucho mas complicado.
+Permite acelerar el tiempo en la modalidad de juego del Tamagotchi, afectando las necesidades de forma mas rapida y haciendo que el nivel de juego sea mucho mas complicado.
 ## Sensor ultrasonido: 
 * Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “Cercanía”, la cual tiene diferentes interacciones con los modulos diseñados de la fpga.
 ## Sensor de luz: 
