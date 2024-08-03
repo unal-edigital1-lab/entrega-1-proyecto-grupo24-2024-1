@@ -13,7 +13,7 @@
 El proyecto esta conformado por los siguientes elementos:
 
 ## Sistema de botones: 
-Se contarán con 6 botones para interacción:(cabe aclarar que se utilizara botones antirrebote digitales)
+Se contarán con 6 botones para interacción (cabe aclarar que se utilizara botones antirrebote digitales):
 
  1. **Alimentar:** Al ser presionado, inicia animación de comer y sube la necesidad de alimentación 1 unidad. 
  2. **Curar:** Al ser presionado, suba la necesidad de curación 1 unidad.
