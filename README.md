@@ -22,6 +22,7 @@ Se contarán con 6 botones para interacción:
  5. **Reset**: Al presionar el botón reset por mas de 5 segundos el tamaguchi salta al estado “bien” con todas las necesidades en el valor 7. 
  6. **Test**: Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre todos estados del tamagushi
 
+## Sistema de Sensores:
 
 
 ## Sistema de visualización: 
