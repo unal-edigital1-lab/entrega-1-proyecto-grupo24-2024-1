@@ -65,14 +65,14 @@ El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda 
 
 ## Estados: 
 La mascota virtual contara con 11 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
-*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo
-*	Estado dormido: el tamaguchi se encuentra dormido
-*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo
-*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo
-*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo
-*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo
-*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha.
-*	Estado excelente: todas las necesidades están en el máximo posible, entrar en este estado suma instantáneamente 5 puntos a la puntuación (explicado anteriormente).
+*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
+*	Estado dormido: el tamaguchi se encuentra dormido(morado)
+*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
+*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo(Rojo)
+*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo(Naranja)
+*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
+*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
+*	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
 
 ## Sistema de puntuación:
 
@@ -93,18 +93,6 @@ Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 * Entretenimiento: 1 Nivel cada 3 minutos
 * Higiene: 1 nivel cada 7 minutos
 
-## Colores:
-Cada estado del tamaguchi definido se representa en el color del tamaguchi y nos muestra claramente cuál es su estado, esto se describe como sigue.
-*	Estado cansado: Azul
-*	Estado dormido: Morado
-*	Estado Hambriento: amarillo
-*	Estado enfermo: rojo
-*	Estado aburrido: naranja
-*	Estado sucio: café 
-*	Estado bien: Verde
-*	Estado excelente: Verde claro
-*	Estado desolado: Gris 
-*	Estado muerte: Blanco
 
 ## Lenguaje adecuado para describir el sistema:
 Para la programación del sistema Tamagotchi, se utilizará el lenguaje de descripción de hardware
