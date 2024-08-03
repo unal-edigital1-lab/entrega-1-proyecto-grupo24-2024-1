@@ -7,10 +7,7 @@
 ## Sistema de caja negra:
 
 
-![otras](https://github.com/user-attachments/assets/c6ca6124-6303-466b-b717-886ff67c76fd)
-
-
-
+![la ultima](https://github.com/user-attachments/assets/11db0f5f-9820-4343-908c-4cae6e9c52a5)
 
 
 
