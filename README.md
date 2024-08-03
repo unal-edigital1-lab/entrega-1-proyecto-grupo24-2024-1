@@ -23,6 +23,14 @@ Se contarán con 6 botones para interacción (cabe aclarar que se utilizara boto
  6. **Test**: Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre todos estados del tamagushi
 
 ## Sistema de Sensores:
+Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz
+ 
+1.**sensor ultrasónico:** Periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “Cercanía”, el cual se direccionara por medio del modulo especifico de driver ultrasonido
+
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
+
+
+![resis](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/a12246a0-bf46-43af-95c6-a89d2cdcb4a5)
 
 
 ## Sistema de visualización: 
@@ -32,10 +40,7 @@ Pantallas 8x8 matriz de leds RGB: la primera mostrara las imágenes del Yamaguch
 
 
 
-## Sensores:
-Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz que es simplemente una Fotorresistencia en un divisor de tensión que pasara al ADC del Arduino.
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
-![resis](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/a12246a0-bf46-43af-95c6-a89d2cdcb4a5)
+
 
 
 
