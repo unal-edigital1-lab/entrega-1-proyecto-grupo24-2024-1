@@ -1,6 +1,6 @@
  # Entrega 1 del proyecto Tamagotchi Electronica Digital I
 
-* Camilo Prieto Gomez-1000364337
+* Camilo Prieto Gomez - 1000364337
 * Tait Mozuca Tamayo - 1193560405
 * Leidy Pinto Ramos - 1000787494
 # Especificación de los sistemas que conforman el proyecto:
