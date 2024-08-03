@@ -56,7 +56,12 @@ módulos para organizar el diseño.
 # Especificaciones de Diseño Detalladas
 
 ## Necesidades:
-Energía, salud, comida, Entretenimiento, higiene. (estas necesidades se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
+El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
+* Energía
+* salud
+* Comida
+* Entretenimiento
+* higiene
 
 ## Sistema de puntuación:
 
