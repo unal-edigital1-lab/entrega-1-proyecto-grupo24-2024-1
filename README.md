@@ -13,13 +13,14 @@
 El proyecto esta conformado por los siguientes elementos:
 
 ## Sistema de botones: 
-Se contarán con 4 botones para interacción:
+Se contarán con 6 botones para interacción:
 ### Alimentar:
 ### Curar:
 ### Limpiar:
 ### Dormir:
+### Reset:
+### Test:
 
-Además de los botones de reset y test.
 
 
 ## Sistema de visualización: 
