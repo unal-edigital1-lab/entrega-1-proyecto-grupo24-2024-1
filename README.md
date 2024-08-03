@@ -45,10 +45,6 @@ Pantallas 8x8 matriz de leds WS2812 : Esta pantalla utiliza el sistema RGB(Red,g
 
 
 
-
-
-
-
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
 Tamagotchi, incluyendo las máquinas de estados, la gestión de los estados y
@@ -56,6 +52,8 @@ necesidades de la mascota, y la generación de las señales de visualización.
 * Implementación en HDL: La mayor parte de la lógica del Tamagotchi se
 implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
 módulos para organizar el diseño.
+
+# Especificaciones de Diseño Detalladas
 
 ## Necesidades:
 Energía, salud, comida, Entretenimiento, higiene. (estas necesidades se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
