@@ -51,7 +51,20 @@ Para transmitir los bits para cada led se tiene que enviar un pulso, para el bit
 El diagrama muestra la máquina de estados del transmisor para las pantallas.
 El módulo transmisor se encarga de este trabajo.
 
+Aparte, se dibujaron las visualizaciones, se escribieron en binario y luego se pasó esté código a hexadecimal.
 
+[![Animaci-n1.png](https://i.postimg.cc/MGkLT97Z/Animaci-n1.png)](https://postimg.cc/Bjgp7c7R)
+[![Animaci-n2.png](https://i.postimg.cc/fTGCjJJB/Animaci-n2.png)](https://postimg.cc/BXC2JZ5K)
+[![Animaci-n3.png](https://i.postimg.cc/SxL66V0x/Animaci-n3.png)](https://postimg.cc/Yv9Lk6q5)
+[![Animaci-n4.png](https://i.postimg.cc/bv31MJwX/Animaci-n4.png)](https://postimg.cc/5HQHQfzp)
+[![Animaci-n5.png](https://i.postimg.cc/XNZDfMsN/Animaci-n5.png)](https://postimg.cc/qgTLrFfW)
+
+En código hexadecimal de las animaciones queda así: 
+667E426A437F3F66
+667E4256C2FEFC66
+667E426A6B7F3F66
+667E4256D6FEFC66
+667E4242427E3C66
 
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
