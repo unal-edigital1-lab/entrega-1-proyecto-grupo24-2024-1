@@ -46,14 +46,19 @@ Pantallas 8x8 matriz de leds WS2812 : Esta pantalla utiliza el sistema RGB(Red,g
 
 Pantallas 8x8 matriz de leds RGB: la primera mostrara las imágenes del Yamaguchi reflejando con animaciones y con sus colores su estado actual según sus necesidades. La segunda mostrara 5 barras que indican el nivel de necesidad respectivo por cada ítem, para mostrar que tan necesitado se encuentra en su necesidad actual.
 
-Para transmitir los bits para cada led se tiene que enviar un pulso, para el bit=0, la señal en alto tiene que ser muy corto, aproximadamente 350ns y una señal en bajo larga, 800ns. Para el bit=1, se necesita lo contrario, la señal en alto es de 700ns y la señal en bajo es de 600ns. (Estos valores fueron tomados del datasheet de la pantalla). Se necesitan estos valores en ciclos de reloj, debido a que la fpga tiene una frecuencia de 50mHz, 20ns, los valores para el bit 0, son de HL=17 ciclos, LL=40 ciclos, y para el bit 1, HL=35 ciclos, LL=30 ciclos. El tamaño del bit a transmitir es de 24 bits por pixel, por lo que son 3072 bits para las dos pantallas.
+El control de imagen del proyecto en grosomodo va a encender pixeles específicos y asignarles un color dependiendo del estado del tamagushi. Esto se va a hacer por pasos:
 
-[![read-1.png](https://i.postimg.cc/MTnkHMrG/read-1.png)](https://postimg.cc/7GrtQ64v)
+[![read.png](https://i.postimg.cc/PqVMqR2c/read.png)](https://postimg.cc/3ypGSnMC)
 
-El diagrama muestra la máquina de estados del transmisor para las pantallas.
-El módulo transmisor se encarga de este trabajo.
+En el estado SCOLOR se asigna un color a cada estado, si el pixel no está activo se envía el color negro.
 
-Aparte, se dibujaron las visualizaciones, se escribieron en binario y luego se pasó esté código a hexadecimal.
+Cuando se elige el color dependiendo del estado del tamagushi se pasa al estado SENDCOLOR, sin embargo, este estado no solo funciona enviando los bits de datos del color, también elige la animación que se va a mostrar en pantalla.
+
+Para el envío de bits de color se usó un multiplexor debido a que hay que enviar los datos de color uno por uno (se envía el bit de color verde, luego el bit de color azul y por último el bit de color rojo). Este multiplexor se puede ver en el módulo mux24.
+
+Para la animación,  esta animación depende del estado del tamagushi y también del tiempo que se lleva mostrando la animación actual, si se han mantenido 4 frames de la animación actual pasa a la siguiente (un frame (cframe) se completa cuando se enviaron los 127 pixeles). Por ejemplo, para el estado estado == 4'b0000 (cuando el tamagushi se encuentra en el estado "bien") la animación por defecto es la primera, si se matntiene 4 frames en este estado se pasa al estado 2, esto hace ver al tamagushi de forma más dinámica. Las animaciones se encuentran a continuación. 
+
+Se dibujaron las visualizaciones, se escribieron en binario y luego se pasó esté código a hexadecimal.
 
 [![Animaci-n1.png](https://i.postimg.cc/MGkLT97Z/Animaci-n1.png)](https://postimg.cc/Bjgp7c7R)
 [![Animaci-n2.png](https://i.postimg.cc/fTGCjJJB/Animaci-n2.png)](https://postimg.cc/BXC2JZ5K)
@@ -68,8 +73,14 @@ En código hexadecimal de las animaciones queda así: (El código de las animaci
 * 667E4256D6FEFC66
 * 667E4242427E3C66
 
-Estas animaciones van a ir a un multiplexor de 64, este, va a recibir el código de las animaciones y va a seleccionar que pixeles van a tener la información de 1 o de 0. 
+Estas animaciones van a ir a un multiplexor de 64, este, va a recibir el código de las animaciones y va a seleccionar que pixeles van a estar activos.
 
+Para transmitir los bits para cada led se tiene que enviar un pulso, para el bit=0, la señal en alto tiene que ser muy corto, aproximadamente 350ns y una señal en bajo larga, 800ns. Para el bit=1, se necesita lo contrario, la señal en alto es de 700ns y la señal en bajo es de 600ns. (Estos valores fueron tomados del datasheet de la pantalla). Se necesitan estos valores en ciclos de reloj, debido a que la fpga tiene una frecuencia de 50mHz, 20ns, los valores para el bit 0, son de HL=17 ciclos, LL=40 ciclos, y para el bit 1, HL=35 ciclos, LL=30 ciclos. El tamaño del bit a transmitir es de 24 bits por pixel, por lo que son 3072 bits para las dos pantallas.
+
+[![read-1.png](https://i.postimg.cc/MTnkHMrG/read-1.png)](https://postimg.cc/7GrtQ64v)
+
+El diagrama muestra la máquina de estados del transmisor para las pantallas.
+El módulo transmisor se encarga de este trabajo. En el código se puede ver como se recibe el dato, lo convierte en ciclos y también hay un contador de cuantos datos se han recibido, así, al llegar al bit 3072 se reinicia el código.
 
 ## Visualización de velocidad y puntuación
 
