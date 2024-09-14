@@ -59,12 +59,15 @@ Aparte, se dibujaron las visualizaciones, se escribieron en binario y luego se p
 [![Animaci-n4.png](https://i.postimg.cc/bv31MJwX/Animaci-n4.png)](https://postimg.cc/5HQHQfzp)
 [![Animaci-n5.png](https://i.postimg.cc/XNZDfMsN/Animaci-n5.png)](https://postimg.cc/qgTLrFfW)
 
-En código hexadecimal de las animaciones queda así: 
-667E426A437F3F66
-667E4256C2FEFC66
-667E426A6B7F3F66
-667E4256D6FEFC66
-667E4242427E3C66
+En código hexadecimal de las animaciones queda así: (El código de las animaciones es el llamado ROMAnimation)
+* 667E426A437F3F66
+* 667E4256C2FEFC66
+* 667E426A6B7F3F66
+* 667E4256D6FEFC66
+* 667E4242427E3C66
+
+Estas animaciones van a ir a un multiplexor de 64, este, va a recibir el código de las animaciones y va a seleccionar que pixeles van a tener la información de 1 o de 0. 
+
 
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
