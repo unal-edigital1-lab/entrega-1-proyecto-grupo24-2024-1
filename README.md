@@ -48,7 +48,7 @@ Pantallas 8x8 matriz de leds RGB: la primera mostrara las imágenes del Yamaguch
 
 El control de imagen del proyecto en grosomodo va a encender pixeles específicos y asignarles un color dependiendo del estado del tamagushi. Esto se va a hacer por pasos:
 
-<img src="img/Lectúra.png" width="256"/>
+<img src="img/Lectúra.png" width="500"/>
 
 En el estado SCOLOR se asigna un color a cada estado, si el pixel no está activo se envía el color negro.
 
