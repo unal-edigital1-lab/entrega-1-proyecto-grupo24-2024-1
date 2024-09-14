@@ -48,8 +48,7 @@ Pantallas 8x8 matriz de leds RGB: la primera mostrara las imágenes del Yamaguch
 
 El control de imagen del proyecto en grosomodo va a encender pixeles específicos y asignarles un color dependiendo del estado del tamagushi. Esto se va a hacer por pasos:
 
-[read.png](https://postimg.cc/3ypGSnMC)
-
+[![read.png](https://i.postimg.cc/PqVMqR2c/read.png)](https://postimg.cc/3ypGSnMC)
 En el estado SCOLOR se asigna un color a cada estado, si el pixel no está activo se envía el color negro.
 
 Cuando se elige el color dependiendo del estado del tamagushi se pasa al estado SENDCOLOR, sin embargo, este estado no solo funciona enviando los bits de datos del color, también elige la animación que se va a mostrar en pantalla.
