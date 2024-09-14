@@ -77,7 +77,7 @@ Estas animaciones van a ir a un multiplexor de 64, este, va a recibir el código
 
 Para transmitir los bits para cada led se tiene que enviar un pulso, para el bit=0, la señal en alto tiene que ser muy corto, aproximadamente 350ns y una señal en bajo larga, 800ns. Para el bit=1, se necesita lo contrario, la señal en alto es de 700ns y la señal en bajo es de 600ns. (Estos valores fueron tomados del datasheet de la pantalla). Se necesitan estos valores en ciclos de reloj, debido a que la fpga tiene una frecuencia de 50mHz, 20ns, los valores para el bit 0, son de HL=17 ciclos, LL=40 ciclos, y para el bit 1, HL=35 ciclos, LL=30 ciclos. El tamaño del bit a transmitir es de 24 bits por pixel, por lo que son 3072 bits para las dos pantallas.
 
-[![read-1.png]](https://postimg.cc/7GrtQ64v)
+![read-1.png](https://postimg.cc/7GrtQ64v)
 
 El diagrama muestra la máquina de estados del transmisor para las pantallas.
 El módulo transmisor se encarga de este trabajo. En el código se puede ver como se recibe el dato, lo convierte en ciclos y también hay un contador de cuantos datos se han recibido, así, al llegar al bit 3072 se reinicia el código.
