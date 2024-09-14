@@ -10,7 +10,11 @@ Un Tamagotchi es un aparato electrónico con forma de huevo en el que aparece un
 El proyecto cuenta con cuatro botones, de los cuales cuatro estarán destinados a interactuar directamente con las necesidades del Tamagotchi (alimentar, dormir, curar y jugar), un boton cambiador de tiempo, un boton test que permite examinar cada una de las condiciones de la mascota virtual y un boton de reset completo del juego. Además, contará con dos pantallas de matriz de LEDs WS2812, cada una de 8x8 píxeles: una mostrará el personaje y la otra las barras y estados de energía. También incluye dos sensores externos: un sensor de luz y un sensor de movimiento ultrasónico para generar interacción con el juego.
 ![INICIO](https://github.com/user-attachments/assets/dadbe043-c4e5-4baa-ba16-1a29e510a191)
 
+El diagrama anterior demuestra el funcionamiento global del proyecto. Los tres módulos mostrados serán los encargados de proporcionar la información adecuada a la FPGA para comunicar los botones y sensores con la imagen de la mascota virtual. Es de gran importancia tener en cuenta la cantidad de bits a utilizar y que cada uno de estos módulos contiene submódulos clave que generan distintas salidas relevantes para el funcionamiento del proyecto y permiten el funcionamiento básico del Tamagotchi.
 
+Es importante considerar la cantidad de bits de entrada y salida. Los botones utilizarán 8 bits, ya que cada botón proporcionará un bit de información al sistema. Los sensores se comunicarán mediante un bit de bandera que notificará a la FPGA sobre los cambios en el exterior; un bit será para el sensor de movimiento y otro bit para el sensor de luz.
+
+En total, se utilizarán quince bits para las necesidades, distribuidos en 3 bits por cada una (salud, entretenimiento, energía, alimentación e higiene). Además, se asignarán cuatro bits para el estado del Tamagotchi, acorde al nivel de sus necesidades. Finalmente, las salidas consistirán en un bit de datos que transmitirá la información a las pantallas y 15 bits distribuidos entre los 8 ánodos y el display de siete segmentos.
 
 ## Sistema de caja negra:
 
