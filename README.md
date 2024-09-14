@@ -6,7 +6,8 @@
   
 ## Descripción general
 Un Tamagotchi es un aparato electrónico con forma de huevo donde aparece una mascota virtual que se puede cuidar usando generalmente 3 botones. En nuestro proyecto, tratamos de emular este proyecto usando una FPGA Cyclone IV EP4CE6E22C8N y diversos sensores y elementos electrónicos en los que ahondaremos en este documento.
-Utilizamos 7 botones que cumplirán las funciones de alimentar, curar, limpiar, dormir, reset, test y acelerador.
+# Componentes del proyecto
+El proyecto se compone 
 
 # Especificación de los sistemas que conforman el proyecto:
 
