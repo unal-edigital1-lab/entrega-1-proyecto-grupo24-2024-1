@@ -1,9 +1,15 @@
- # Entrega 1 del proyecto Tamagotchi Electronica Digital I
+ # Proyecto I Electronica Digital I
 
 * Camilo Prieto Gomez - 1000364337
 * Tait Mozuca Tamayo - 1193560405
 * Leidy Pinto Ramos - 1000787494
+  
+  ## Descripción general
+Un Tamagotchi es un aparato electrónico con forma de huevo donde aparece una mascota virtual que se puede cuidar usando generalmente 3 botones. En nuestro proyecto, tratamos de emular este proyecto usando una FPGA Cyclone IV EP4CE6E22C8N y diversos sensores y elementos electrónicos en los que ahondaremos en este documento.
+Utilizamos 7 botones que cumplirán las funciones de alimentar, curar, limpiar, dormir, reset, test y acelerador.
+
 # Especificación de los sistemas que conforman el proyecto:
+
 ## Sistema de caja negra:
 
 
@@ -66,7 +72,8 @@ En código hexadecimal de las animaciones queda así:
 667E4256D6FEFC66
 667E4242427E3C66
 
-## Visualización
+## Visualización de velocidad y puntuación
+
 En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
 
 Para el caso de la velocidad, tendremos el siguiente bloque de código:
