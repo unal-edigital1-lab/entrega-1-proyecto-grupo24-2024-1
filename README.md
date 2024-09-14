@@ -1,9 +1,15 @@
- # Entrega 1 del proyecto Tamagotchi Electronica Digital I
+ # Proyecto I Electronica Digital I
 
 * Camilo Prieto Gomez - 1000364337
 * Tait Mozuca Tamayo - 1193560405
 * Leidy Pinto Ramos - 1000787494
+  
+## Descripción general
+Un Tamagotchi es un aparato electrónico con forma de huevo donde aparece una mascota virtual que se puede cuidar usando generalmente 3 botones. En nuestro proyecto, tratamos de emular este proyecto usando una FPGA Cyclone IV EP4CE6E22C8N y diversos sensores y elementos electrónicos en los que ahondaremos en este documento.
+Utilizamos 7 botones que cumplirán las funciones de alimentar, curar, limpiar, dormir, reset, test y acelerador.
+
 # Especificación de los sistemas que conforman el proyecto:
+
 ## Sistema de caja negra:
 
 
@@ -13,15 +19,11 @@
 El proyecto esta conformado por los siguientes elementos:
 
 ## Sistema de botones: 
-Se contarán con 7 botones para interacción (cabe aclarar que se utilizara botones antirrebote digitales):
 
- 1. **Alimentar:** Al ser presionado, inicia animación de comer y sube la necesidad de alimentación 1 unidad. 
- 2. **Curar:** Al ser presionado, suba la necesidad de curación 1 unidad.
- 3. **Limpiar:** Al ser presionado, suba la necesidad de higiene 1 unidad.
- 4. **Dormir**: Al ser presionado, pondrá al tamaguchi en el estado “dormido”, al mantenerse en dicho estado por cierto tiempo aumentara energia en 1 unidad
- 5. **Reset**: Al presionar el botón reset por mas de 5 segundos el tamaguchi salta al estado “bien” con todas las necesidades en el valor 7. 
- 6. **Test**: Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre todos estados del tamagushi.
- 7. **Acelerador**: Este botón permite que se cambie la velocidad con la que disminuyen las necesidades del tamaguchi, siendo el modo predeterminado 1X, los otros modos posibles son 2X, 5X, 10X y 30X.
+Para los 7 botones antirrebote se usa el módulo "debounce", que se encarga de limpiar la señal del botón y eliminar los rebotes que se producen al presionarlo.
+**botondebounced** es la salida del botón cuando ya se encuentra limpia; las variables internas son previous, compare, buttonneg y el contador. previous es una señal que almacena el último estado estable del botón; compare detecta si el estado actual del botón es diferente al último estado almacenado; buttonneg es la versión negada del botón. Ésta sirve para los botones normalmente abiertos. Finalmente, el contador cuenta el tiempo para estabilizar el botón después de detectar un cambio.
+### Simulaciones: 
+> ![Botones](https://github.com/user-attachments/assets/027c1b6b-0126-4bb8-be33-bf05a8ca8316)
 
 ## Sistema de Sensores:
 Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz
@@ -69,6 +71,28 @@ En código hexadecimal de las animaciones queda así: (El código de las animaci
 Estas animaciones van a ir a un multiplexor de 64, este, va a recibir el código de las animaciones y va a seleccionar que pixeles van a tener la información de 1 o de 0. 
 
 
+## Visualización de velocidad y puntuación
+
+En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
+
+Para el caso de la velocidad, tendremos el siguiente bloque de código:
+> ![image](https://github.com/user-attachments/assets/4b00287f-d20b-45b9-8975-a44c4f6d3dff)
+
+que está encargado de asignarle un valor a numeroactual dependiendo del valor binario de 3 bits que tengamos en el momento. Por lo tanto, en vez de tener una representación del número binario a decimal en la simulación, vamos a obtener el número que se le fue asignado en el bloque de código, y luego expresarlo en decenas y unidades.
+
+  ### Simulaciones: 
+  #### Visualización de velocidad: 
+
+  > ![Visualizacion velocidad](https://github.com/user-attachments/assets/afc9d3d5-20f3-4775-97b4-6bc328139e50)
+
+  Como se puede ver, en vez de mostrar el equivalente del número binario en número actual o en decenas/unidades, se muestra el valor que se le fue asignado a ese número en el bloque anteriormente mencionado.
+
+  #### Visualización de puntuación:
+> ![Visualizacion puntuacion](https://github.com/user-attachments/assets/abfc1b85-e00c-423f-9691-05e9b1c0a278)
+
+  ### Máquina de estados:
+  > ![Estado 1](https://github.com/user-attachments/assets/506563cf-bcf4-4ee0-aa8e-66399df419ea)
+
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
 Tamagotchi, incluyendo las máquinas de estados, la gestión de los estados y
@@ -98,15 +122,20 @@ La mascota virtual contara con 11 diferentes estados, cada uno sera representado
 *	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
 *	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
 
-## Sistema de puntuación:
+## Control Puntuación:
 
-Se obtendrá puntuación por cada vez que se satisfagan las necesidades de la mascota, y se perderán si esta se descuida. La puntuación se reflejará en el display 7 segmentos. La puntuación funcionara así:
+Para la puntuación total, que es la suma de los valores de la salud, alimentación, energía, entretenimiento e higiene; éstas son entradas de 3 bits que van del nivel 0 al nivel 7.
+**Bonus:** Es un valor que se activa en cuanto llegamos a la puntuación máxima, que es 35; el bonus es de 5 puntos.
 
-* +1 punto si una necesidad no satisfecha se sube al nivel 7 o mas
-* +5 puntos bonus si todas las necesidades se encuentran satisfechas al tiempo (esto genera una especie de racha para acumular puntos en cadena)
-* -1 punto cada 10 segundos si una sola necesidad se encuentra por debajo del nivel 3 de satisfacción (esto es acumulable por cada necesidad, es decir, si 4 necesidades se encuentran por debajo del nivel 3 de satisfacción, se  perderán 4 puntos cada 10 segundos)
-* -1 puntos por cada segundo extra si al menos 2 necesidades se encuentran en el nivel mínimo de satisfacción.
-* Cabe aclarar que estos tiempos se modifican cuando el modo de velocidad no es X1, por lo que en los otros casos(x2,x5,x10) disminuiran proporcionalmente al valor de velocidad segun la modalidad elegida por el jugador.
+**lostsalud, lostalimentacion, lostenergia, lostentretenimiento, losthigiene:** Son valores que representan la pérdida de puntos en la salud, energía y otras necesidades cuando su nivel está por debajo de 2. **puntosperdidos** es la salida que va a representar el total de puntos perdidos por los niveles bajos.
+
+**deadsalud, deadalimentacion, deadenergia, deadentretenimiento, deadhigiene:** Son señales que representan cuando los niveles de salud, energía y entre otros llegaron al nivel 0. **Totalmalaracha** indica cuántos de estos indicadores están en nivel crítico y **negativebonus** penaliza al jugador por 5 punto cuando 2 o más necesidades están en 0.
+
+**totalpuntosperdidos:** Es la suma de negativebonus y puntosperdidos.
+Las banderas en el código se utilizan para evitar que se sumen puntos repetidamente dentro del mismo ciclo de reloj. La banderabus, por otro lado, funciona para que el bonus se otorgue sólo una vez en cuando se cumple la condición requerida.
+
+  ### Simulaciones:
+  ![Controlpuntuacion ](https://github.com/user-attachments/assets/334b7944-f83f-4293-833b-0aac57adf1a2)
 
 
 ## Interacciones
@@ -119,27 +148,8 @@ Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 * Cabe aclarar que estos tiempos se modifican cuando el modo de velocidad no es X1, por lo que en los otros casos(x2,x5,x10) disminuiran proporcionalmente al valor de velocidad segun la modalidad elegida por el jugador.
 
 
-## Lenguaje adecuado para describir el sistema:
-Para la programación del sistema Tamagotchi, se utilizará el lenguaje de descripción de hardware
-Verilog. Verilog es un lenguaje de alto nivel diseñado específicamente para la descripción y
-síntesis de circuitos digitales, lo cual lo hace adecuado para el desarrollo de sistemas en
-FPGA.
-
-
-
 # Arquitectura del sistema:
 ![TRABAJO](https://github.com/user-attachments/assets/84d2d35c-c763-4d6e-b344-3ef9a80ce6c7)
-
-
-## Trabajará con arquitectura modular
-* La FPGA Cyclone IV actuará como el núcleo del sistema, integrando los diferentes módulos
-funcionales.
-* Cada módulo se encargará de una tarea específica, como la lógica de control, la máquina
-de estados, la interfaz con los dispositivos, la visualización, etc.
-* Los módulos se comunicarán entre sí a través de interfaces bien definidas, lo que permite
-una mayor modularidad y flexibilidad en el diseño.
-* Esta arquitectura modular facilita el desarrollo, la depuración y la posible expansión o
-reemplazo de componentes en el futuro.
 
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
