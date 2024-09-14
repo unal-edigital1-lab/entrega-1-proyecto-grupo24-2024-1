@@ -66,6 +66,44 @@ En código hexadecimal de las animaciones queda así:
 667E4256D6FEFC66
 667E4242427E3C66
 
+## Visualización
+En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
+
+Para el caso de la velocidad, tendremos el siguiente bloque de código:
+> ![image](https://github.com/user-attachments/assets/4b00287f-d20b-45b9-8975-a44c4f6d3dff)
+
+que está encargado de asignarle un valor a numeroactual dependiendo del valor binario de 3 bits que tengamos en el momento. Por lo tanto, en vez de tener una representación del número binario a decimal en la simulación, vamos a obtener el número que se le fue asignado en el bloque de código, y luego expresarlo en decenas y unidades.
+
+  ### Simulaciones: 
+  #### Visualización de velocidad: 
+
+  > ![Visualizacion velocidad](https://github.com/user-attachments/assets/afc9d3d5-20f3-4775-97b4-6bc328139e50)
+
+  Como se puede ver, en vez de mostrar el equivalente del número binario en número actual o en decenas/unidades, se muestra el valor que se le fue asignado a ese número en el bloque anteriormente mencionado.
+
+  #### Visualización de puntuación:
+> ![Visualizacion puntuacion](https://github.com/user-attachments/assets/abfc1b85-e00c-423f-9691-05e9b1c0a278)
+
+  ### Máquina de estados:
+  > ![Estado 1](https://github.com/user-attachments/assets/506563cf-bcf4-4ee0-aa8e-66399df419ea)
+
+
+## Control Puntuación:
+
+Para la puntuación total, que es la suma de los valores de la salud, alimentación, energía, entretenimiento e higiene; éstas son entradas de 3 bits que van del nivel 0 al nivel 7.
+**Bonus:** Es un valor que se activa en cuanto llegamos a la puntuación máxima, que es 35; el bonus es de 5 puntos.
+
+**lostsalud, lostalimentacion, lostenergia, lostentretenimiento, losthigiene:** Son valores que representan la pérdida de puntos en la salud, energía y otras necesidades cuando su nivel está por debajo de 2. **puntosperdidos** es la salida que va a representar el total de puntos perdidos por los niveles bajos.
+
+**deadsalud, deadalimentacion, deadenergia, deadentretenimiento, deadhigiene:** Son señales que representan cuando los niveles de salud, energía y entre otros llegaron al nivel 0. **Totalmalaracha** indica cuántos de estos indicadores están en nivel crítico y **negativebonus** penaliza al jugador por 5 punto cuando 2 o más necesidades están en 0.
+
+**totalpuntosperdidos:** Es la suma de negativebonus y puntosperdidos.
+Las banderas en el código se utilizan para evitar que se sumen puntos repetidamente dentro del mismo ciclo de reloj. La banderabus, por otro lado, funciona para que el bonus se otorgue sólo una vez en cuando se cumple la condición requerida.
+
+  ### Simulaciones:
+  ![Controlpuntuacion ](https://github.com/user-attachments/assets/334b7944-f83f-4293-833b-0aac57adf1a2)
+
+
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
 Tamagotchi, incluyendo las máquinas de estados, la gestión de los estados y
