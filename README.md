@@ -112,7 +112,7 @@ que está encargado de asignarle un valor a numeroactual dependiendo del valor b
 > ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20puntuacion.png)
 
   ### Máquina de estados:
-  > ![Estado 1](https://github.com/user-attachments/assets/506563cf-bcf4-4ee0-aa8e-66399df419ea)
+  > ![Estado 1](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Estado%201%20(1).png)
 
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
@@ -156,7 +156,7 @@ Para la puntuación total, que es la suma de los valores de la salud, alimentaci
 Las banderas en el código se utilizan para evitar que se sumen puntos repetidamente dentro del mismo ciclo de reloj. La banderabus, por otro lado, funciona para que el bonus se otorgue sólo una vez en cuando se cumple la condición requerida.
 
   ### Simulaciones:
-  ![Controlpuntuacion ](https://github.com/user-attachments/assets/334b7944-f83f-4293-833b-0aac57adf1a2)
+  ![Controlpuntuacion ](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Controlpuntuacion%20.png)
 
 
 ## Interacciones
