@@ -104,12 +104,12 @@ que está encargado de asignarle un valor a numeroactual dependiendo del valor b
   ### Simulaciones: 
   #### Visualización de velocidad: 
 
-  > https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20velocidad.png
+  > ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20velocidad.png)
 
   Como se puede ver, en vez de mostrar el equivalente del número binario en número actual o en decenas/unidades, se muestra el valor que se le fue asignado a ese número en el bloque anteriormente mencionado.
 
   #### Visualización de puntuación:
-> https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20puntuacion.png
+> ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20puntuacion.png)
 
   ### Máquina de estados:
   > ![Estado 1](https://github.com/user-attachments/assets/506563cf-bcf4-4ee0-aa8e-66399df419ea)
