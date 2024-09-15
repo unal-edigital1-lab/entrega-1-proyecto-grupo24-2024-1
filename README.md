@@ -140,7 +140,7 @@ El módulo transmisor se encarga de este trabajo. En el código se puede ver com
 En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
 
 Para el caso de la velocidad, tendremos el siguiente bloque de código:
-> ![image](https://github.com/user-attachments/assets/4b00287f-d20b-45b9-8975-a44c4f6d3dff)
+> ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/velocidad.png)
 
 que está encargado de asignarle un valor a numeroactual dependiendo del valor binario de 3 bits que tengamos en el momento. Por lo tanto, en vez de tener una representación del número binario a decimal en la simulación, vamos a obtener el número que se le fue asignado en el bloque de código, y luego expresarlo en decenas y unidades.
 
