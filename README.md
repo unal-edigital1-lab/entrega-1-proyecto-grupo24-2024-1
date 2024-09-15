@@ -33,7 +33,7 @@ El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda 
 * higiene
 
 ## Estados: 
-La mascota virtual contara con 11 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
+La mascota virtual contara con 10 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
 *	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
 *	Estado dormido: el tamaguchi se encuentra dormido(morado)
 *	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
@@ -42,7 +42,8 @@ La mascota virtual contara con 11 diferentes estados, cada uno sera representado
 *	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
 *	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
 *	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
-*	
+*	Estado Desolado: todas las necesidadescasi en lo mas bajo posible (Blanco Tenue)
+*	Estado Muerto: todas las necesidades en cero(Blanco)
   ## Interacciones
 Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 * Salud: -1 nivel cada 10 minutos
