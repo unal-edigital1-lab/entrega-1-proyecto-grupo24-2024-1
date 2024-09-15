@@ -17,6 +17,7 @@ Es importante considerar la cantidad de bits de entrada y salida. Los botones ut
 En total, se utilizarán quince bits para las necesidades, distribuidos en 3 bits por cada una (salud, entretenimiento, energía, alimentación e higiene). Además, se asignarán cuatro bits para el estado del Tamagotchi, acorde al nivel de sus necesidades. Finalmente, las salidas consistirán en un bit de datos que transmitirá la información a las pantallas y 15 bits distribuidos entre los 8 ánodos y el display de siete segmentos.
 
 ## Funcionamiento controlador principal: 
+### Control pricipal
 El control principal contendra los principales modulos del proyecto los cuales lo conforma el control principal, logica de estado, driver del sensor ultrasonido y control de tiempo que seran explicados uno por a uno a continuación
 La siguiente imagen describe el sistema de caja negra del controlador principal, con cada una de sus entradas y módulos principales, cuyos salidas principales están relacionadas con el estado de ánimo del Tamagotchi
 
