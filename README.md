@@ -65,6 +65,8 @@ Los diagramas anteriores demuestra el funcionamiento del módulo principal, el c
 
 La anterior simulación muestra, en cambio, el comportamiento del control principal conforme se presionan los botones. En esta simulación, se observa cómo los niveles de energía pasan de 6 a 7 en la puntuación.
 
+### Logica de estado
+
 
 ## Sistema de caja negra completo:
 
