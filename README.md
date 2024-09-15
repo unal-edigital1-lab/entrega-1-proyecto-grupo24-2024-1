@@ -25,8 +25,8 @@ La siguiente imagen describe el sistema de caja negra del controlador principal,
 El módulo principal se encargará de reducir y aumentar los niveles de necesidades del Tamagotchi a lo largo del tiempo, además de permitir el ajuste de estos niveles mediante el uso de botones y sensores periféricos externos. También habilita el funcionamiento del modo de prueba, que evalúa cada uno de los posibles estados del Tamagotchi, y el modo de reinicio, que restablece todas las condiciones del Tamagotchi a su estado inicial. Estos botones deben ser oprimidos de forma continua durante al menos 5 segundos para garantizar su funcionamiento.
 ![contolll](https://github.com/user-attachments/assets/e38e090b-394d-4431-97f7-c964b34a0e8f)
 
-La siguiente simulación muestra, en cambio, el comportamiento del control principal conforme se presionan los botones. En esta simulación, se observa cómo los niveles de energía pasan de 6 a 7 en la puntuación.
-![contolll](https://github.com/user-attachments/assets/40fca4b1-21d4-4821-b210-9112c3c426da)
+La anterior simulación muestra, en cambio, el comportamiento del control principal conforme se presionan los botones. En esta simulación, se observa cómo los niveles de energía pasan de 6 a 7 en la puntuación.
+
 
 
 ## Necesidades:
