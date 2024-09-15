@@ -22,6 +22,8 @@ La siguiente imagen describe el sistema de caja negra del controlador principal,
 
 ![OTRAS](https://github.com/user-attachments/assets/d0a8df7a-0afe-4b3f-99dd-d3d855c686bf)
 
+El módulo principal se encargará de reducir y aumentar los niveles de necesidades del Tamagotchi a lo largo del tiempo, además de permitir el ajuste de estos niveles mediante el uso de botones y sensores periféricos externos. También habilita el funcionamiento del modo de prueba, que evalúa cada uno de los posibles estados del Tamagotchi, y el modo de reinicio, que restablece todas las condiciones del Tamagotchi a su estado inicial. Estos botones deben ser oprimidos de forma continua durante al menos 5 segundos para garantizar su funcionamiento.
+
 
 ## Sistema de caja negra completo:
 
