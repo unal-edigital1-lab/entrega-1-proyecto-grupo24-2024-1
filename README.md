@@ -55,8 +55,10 @@ Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 
 El comportamiento de la velocidad sera explicado mas adelaante para el modulo de controlador de tiempo que determina como pasa el tiempo en la modalidad de juego de la mascota virtual
 
-![fdrsgr](https://github.com/user-attachments/assets/8831d0f6-7575-4901-9655-5158ccec2ee0)
 
+![eeeeeeee](https://github.com/user-attachments/assets/16a0c39d-da7e-42a2-af07-bc875d8b572f)
+
+El diagrama anterior demuestra el funcionamiento del módulo principal, el cual utiliza el flanco de subida del reloj para incrementar distintos tipos de contadores. Cuando los contadores alcanzan ciertos valores, las necesidades disminuyen. Además, se describe cómo la función de dormir dependerá de que ambos sensores estén inactivos y de que el estado de salud y el de alimentación sean mayores a 2. También se detallan los botones de prueba y reinicio, así como sus restricciones respecto al estado del modo y cómo afectan a los contadores y botones.
 
 
 
