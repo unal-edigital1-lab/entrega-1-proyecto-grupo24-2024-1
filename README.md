@@ -18,6 +18,10 @@ En total, se utilizarán quince bits para las necesidades, distribuidos en 3 bit
 
 ## Funcionamiento controlador principal: 
 El control principal contendra los principales modulos del proyecto los cuales lo conforma el control principal, logica de estado, driver del sensor ultrasonido y control de tiempo que seran explicados uno por a uno a continuación
+La siguiente imagen describe el sistema de caja negra del controlador principal, con cada una de sus entradas y módulos principales, cuyos salidas principales están relacionadas con el estado de ánimo del Tamagotchi
+
+![OTRAS](https://github.com/user-attachments/assets/d0a8df7a-0afe-4b3f-99dd-d3d855c686bf)
+
 
 ## Sistema de caja negra completo:
 
