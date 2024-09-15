@@ -32,7 +32,7 @@ El proyecto esta conformado por los siguientes elementos:
 Para los 7 botones antirrebote se usa el módulo "debounce", que se encarga de limpiar la señal del botón y eliminar los rebotes que se producen al presionarlo.
 **botondebounced** es la salida del botón cuando ya se encuentra limpia; las variables internas son previous, compare, buttonneg y el contador. previous es una señal que almacena el último estado estable del botón; compare detecta si el estado actual del botón es diferente al último estado almacenado; buttonneg es la versión negada del botón. Ésta sirve para los botones normalmente abiertos. Finalmente, el contador cuenta el tiempo para estabilizar el botón después de detectar un cambio.
 ### Simulaciones: 
-> ![Botones](img/Botones.png)
+> https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Botones.png
 
 ## Sistema de Sensores:
 Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz
@@ -104,12 +104,12 @@ que está encargado de asignarle un valor a numeroactual dependiendo del valor b
   ### Simulaciones: 
   #### Visualización de velocidad: 
 
-  > ![Visualizacion velocidad](https://github.com/user-attachments/assets/afc9d3d5-20f3-4775-97b4-6bc328139e50)
+  > https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20velocidad.png
 
   Como se puede ver, en vez de mostrar el equivalente del número binario en número actual o en decenas/unidades, se muestra el valor que se le fue asignado a ese número en el bloque anteriormente mencionado.
 
   #### Visualización de puntuación:
-> ![Visualizacion puntuacion](https://github.com/user-attachments/assets/abfc1b85-e00c-423f-9691-05e9b1c0a278)
+> https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20puntuacion.png
 
   ### Máquina de estados:
   > ![Estado 1](https://github.com/user-attachments/assets/506563cf-bcf4-4ee0-aa8e-66399df419ea)
