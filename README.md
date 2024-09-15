@@ -32,18 +32,7 @@ El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda 
 * Entretenimiento
 * higiene
 
-## Estados: 
-La mascota virtual contara con 10 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
-*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
-*	Estado dormido: el tamaguchi se encuentra dormido(morado)
-*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
-*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo(Rojo)
-*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo(Naranja)
-*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
-*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
-*	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
-*	Estado Desolado: todas las necesidadescasi en lo mas bajo posible (Blanco Tenue)
-*	Estado Muerto: todas las necesidades en cero(Blanco)
+
   ## Interacciones
 Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 * Salud: -1 nivel cada 10 minutos
@@ -66,7 +55,19 @@ Los diagramas anteriores demuestra el funcionamiento del módulo principal, el c
 La anterior simulación muestra, en cambio, el comportamiento del control principal conforme se presionan los botones. En esta simulación, se observa cómo los niveles de energía pasan de 6 a 7 en la puntuación.
 
 ### Logica de estado
-
+El modulo logica de estado maneja cierta cantidad de condiciones que permiten otorgar bit a una serie de registros que se suman de forma acomulativa, cuando estos rangos son superados segun las necesidades que arroja el modulo control principal, el resultado acomulatuvo determinara el tipo de estado que corresponde a los siguientes:
+## Estados: 
+La mascota virtual contara con 10 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
+*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
+*	Estado dormido: el tamaguchi se encuentra dormido(morado)
+*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
+*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo(Rojo)
+*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo(Naranja)
+*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
+*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
+*	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
+*	Estado Desolado: todas las necesidadescasi en lo mas bajo posible (Blanco Tenue)
+*	Estado Muerto: todas las necesidades en cero(Blanco)
 
 ## Sistema de caja negra completo:
 
