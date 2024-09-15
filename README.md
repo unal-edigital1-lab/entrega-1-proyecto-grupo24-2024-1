@@ -55,7 +55,8 @@ Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 
 El comportamiento de la velocidad sera explicado mas adelaante para el modulo de controlador de tiempo que determina como pasa el tiempo en la modalidad de juego de la mascota virtual
 
-![1dr](https://github.com/user-attachments/assets/ca5ab47f-e0da-4c02-a630-71d616cde52a)
+![1dr](https://github.com/user-attachments/assets/014116bf-77c2-404c-93bf-791373a100e0)
+
 
 
 ## Sistema de caja negra completo:
