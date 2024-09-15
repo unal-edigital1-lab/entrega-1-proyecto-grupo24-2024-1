@@ -55,7 +55,8 @@ Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
 
 El comportamiento de la velocidad sera explicado mas adelaante para el modulo de controlador de tiempo que determina como pasa el tiempo en la modalidad de juego de la mascota virtual
 
-![1dr](https://github.com/user-attachments/assets/014116bf-77c2-404c-93bf-791373a100e0)
+![fdrsgr](https://github.com/user-attachments/assets/8831d0f6-7575-4901-9655-5158ccec2ee0)
+
 
 
 
