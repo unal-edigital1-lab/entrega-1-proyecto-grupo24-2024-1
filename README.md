@@ -142,7 +142,7 @@ En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos
 Para el caso de la velocidad, tendremos el siguiente bloque de código:
 > ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/velocidad.png)
 
-que está encargado de asignarle un valor a numeroactual dependiendo del valor binario de 3 bits que tengamos en el momento. Por lo tanto, en vez de tener una representación del número binario a decimal en la simulación, vamos a obtener el número que se le fue asignado en el bloque de código, y luego expresarlo en decenas y unidades.
+que está encargado de asignarle un valor a la decena/unidad velocidad dependiendo del número binario de 3 bits que tengamos en el momento. Por lo tanto, en vez de tener una representación del número binario a decimal en la simulación, vamos a obtener el número que se le fue asignado en el bloque de código, y luego expresarlo en decenas y unidades.
 
   ### Simulaciones: 
   #### Visualización de velocidad: 
