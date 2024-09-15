@@ -24,6 +24,37 @@ La siguiente imagen describe el sistema de caja negra del controlador principal,
 
 El módulo principal se encargará de reducir y aumentar los niveles de necesidades del Tamagotchi a lo largo del tiempo, además de permitir el ajuste de estos niveles mediante el uso de botones y sensores periféricos externos. También habilita el funcionamiento del modo de prueba, que evalúa cada uno de los posibles estados del Tamagotchi, y el modo de reinicio, que restablece todas las condiciones del Tamagotchi a su estado inicial. Estos botones deben ser oprimidos de forma continua durante al menos 5 segundos para garantizar su funcionamiento.
 
+## Necesidades:
+El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
+* Energía
+* salud
+* Comida
+* Entretenimiento
+* higiene
+
+## Estados: 
+La mascota virtual contara con 11 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
+*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
+*	Estado dormido: el tamaguchi se encuentra dormido(morado)
+*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
+*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo(Rojo)
+*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo(Naranja)
+*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
+*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
+*	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
+*	
+  ## Interacciones
+Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
+* Salud: -1 nivel cada 10 minutos
+* Comida: -1 nivel cada 5 minutos
+* Energía: -1 Nivel cada 7 minutos
+* Entretenimiento: -1 Nivel cada 3 minutos
+* Higiene: -1 nivel cada 7 minutos
+* Cabe aclarar que estos tiempos se modifican cuando el modo de velocidad no es X1, por lo que en los otros casos(x2,x5,x10) disminuiran proporcionalmente al valor de velocidad segun la modalidad elegida por el jugador.
+
+El comportamiento de la velocidad sera explicado mas adelaante para el modulo de controlador de tiempo que determina como pasa el tiempo en la modalidad de juego de la mascota virtual
+
+
 
 ## Sistema de caja negra completo:
 
