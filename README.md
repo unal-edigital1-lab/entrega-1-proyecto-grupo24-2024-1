@@ -56,7 +56,7 @@ La anterior simulación muestra, en cambio, el comportamiento del control princi
 
 ### Logica de estado
 El modulo logica de estado maneja cierta cantidad de condiciones que permiten otorgar bit a una serie de registros que se suman de forma acomulativa, cuando estos rangos son superados segun las necesidades que arroja el modulo control principal, el resultado acomulatuvo determinara el tipo de estado que corresponde a los siguientes:
-## Estados: 
+### Estados: 
 La mascota virtual contara con 10 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
 *	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
 *	Estado dormido: el tamaguchi se encuentra dormido(morado)
