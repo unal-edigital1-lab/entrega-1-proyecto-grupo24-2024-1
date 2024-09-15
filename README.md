@@ -32,7 +32,7 @@ El proyecto esta conformado por los siguientes elementos:
 Para los 7 botones antirrebote se usa el módulo "debounce", que se encarga de limpiar la señal del botón y eliminar los rebotes que se producen al presionarlo.
 **botondebounced** es la salida del botón cuando ya se encuentra limpia; las variables internas son previous, compare, buttonneg y el contador. previous es una señal que almacena el último estado estable del botón; compare detecta si el estado actual del botón es diferente al último estado almacenado; buttonneg es la versión negada del botón. Ésta sirve para los botones normalmente abiertos. Finalmente, el contador cuenta el tiempo para estabilizar el botón después de detectar un cambio.
 ### Simulaciones: 
-> ![Botones](https://github.com/user-attachments/assets/027c1b6b-0126-4bb8-be33-bf05a8ca8316)
+> ![Botones](img/Botones.png)
 
 ## Sistema de Sensores:
 Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz
