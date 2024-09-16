@@ -94,6 +94,9 @@ La siguiente simulacion muestra como se activa la señal trigger por 10 microseg
 
 ![sonido](https://github.com/user-attachments/assets/d8bdac96-9d18-4d4a-9358-9400cf41744b)
 
+La siguiente maquina de estados explica el proceso de cambio de estados del sensor y como pasa de los estados send trigger hasta el estado final de delay para recibir la señal final por parte del echo y lanzar la bandera cercania al sistema indicando que existe un objeto cercano
+
+![maquinon](https://github.com/user-attachments/assets/5a812051-9b7d-4c4d-8a8e-785351f3adad)
 
 
 
