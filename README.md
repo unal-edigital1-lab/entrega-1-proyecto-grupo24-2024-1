@@ -215,17 +215,7 @@ Las banderas en el código se utilizan para evitar que se sumen puntos repetidam
  ### Diagrama de caja negra
  <img src="img/cnp.png" width="500"/>
 
-## Interacciones
-Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
-* Salud: 1 nivel cada 10 minutos
-* Comida: 1 nivel cada 5 minutos
-* Energía: 1 Nivel cada 7 minutos
-* Entretenimiento: 1 Nivel cada 3 minutos
-* Higiene: 1 nivel cada 7 minutos
-* Cabe aclarar que estos tiempos se modifican cuando el modo de velocidad no es X1, por lo que en los otros casos(x2,x5,x10) disminuiran proporcionalmente al valor de velocidad segun la modalidad elegida por el jugador.
 
-
-# Arquitectura del sistema:
 ![TRABAJO](https://github.com/user-attachments/assets/84d2d35c-c763-4d6e-b344-3ef9a80ce6c7)
 
 ## FPGA Altera Cyclone IV:
