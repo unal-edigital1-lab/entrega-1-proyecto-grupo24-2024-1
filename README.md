@@ -105,6 +105,8 @@ Pantallas 8x8 matriz de leds WS2812 : Esta pantalla utiliza el sistema RGB(Red,g
 
 Pantallas 8x8 matriz de leds RGB: la primera mostrara las imágenes del Yamaguchi reflejando con animaciones y con sus colores su estado actual según sus necesidades. La segunda mostrara 5 barras que indican el nivel de necesidad respectivo por cada ítem, para mostrar que tan necesitado se encuentra en su necesidad actual.
 
+<img src="img/imagecontrol.png" width="500"/>
+
 El control de imagen del proyecto en grosomodo va a encender pixeles específicos y asignarles un color dependiendo del estado del tamagushi. Esto se va a hacer por pasos:
 
 <img src="img/Lectúra.png" width="500"/>
@@ -115,12 +117,13 @@ Cuando se elige el color dependiendo del estado del tamagushi se pasa al estado 
 
 Para el envío de bits de color se usó un multiplexor debido a que hay que enviar los datos de color uno por uno (se envían los bits de color verde, luego los bits de color azul y por último los bits de color rojo). Este multiplexor se puede ver en el módulo mux24. 
 
-Para la animación,  esta animación depende del estado del tamagushi y también del tiempo que se lleva mostrando la animación actual, si se han mantenido 4 frames de la animación actual pasa a la siguiente (un frame (cframe) se completa cuando se enviaron los 127 pixeles). Por ejemplo, para el estado estado == 4'b0000 (cuando el tamagushi se encuentra en el estado "bien") la animación por defecto es la primera, si se mantiene 4 frames en este estado se pasa al estado 2, esto hace ver al tamagushi de forma más dinámica. Las animaciones se encuentran a continuación. 
+Para la animación,  esta animación depende del estado del tamagushi y también del tiempo que se lleva mostrando la animación actual, si se han mantenido 4 frames de la animación actual pasa a la siguiente (un frame (cframe) se completa cuando se enviaron los 127 pixeles). Por ejemplo, para el estado estado == 4'b0000 (cuando el tamagushi se encuentra en el estado "bien") Para el estado bien y excelente la animación por defecto es la 1, lo que significa que alterna entre la animación 1 y 2. Para el estado dormido y muerto se queda en la animación 5 (pero con diferentes colores). Para los demás estados(deficiente en alguno de los estados) la animación por defecto es la 3 y alterna con la 4. 
 
 <img src="img/Animación1.png" width="500"/>
 <img src="img/Animación2.png" width="500"/>
 <img src="img/Animación3.png" width="500"/>
 <img src="img/Animación4.png" width="500"/>
+<img src="img/Animación5.png" width="500"/>
 
 Se dibujaron las visualizaciones, se escribieron en binario y luego se pasó esté código a hexadecimal.
 
@@ -134,7 +137,9 @@ En código hexadecimal de las animaciones queda así: (El código de las animaci
 
 Estas animaciones van a ir a un multiplexor de 64, este, va a recibir el código de las animaciones y va a seleccionar que pixeles van a estar activos.
 
-Debido a que las necesidades cambian de diferente forma, se pusieron ciertas necesidades como prioridad, esta comparación se hace en el módulo needcomparator
+Para la pantalla de la barra de niveles hubo que hacer otro módulo llamado needcomparator, en este se compara el pixel actual y el nivel de cada nececidad actual, si, por ejemplo, está en el último pixel de la barra de necesidades, pero la necesidad es menor a 7 el pixel no se va a encender. 
+
+En el código de imagecontrol se establece que para los primeros 64 pixeles se use la lógica de la animación, cuando está en un pixel mayor a este se aplica el needcomparator.
 
 Para transmitir los bits para cada led se tiene que enviar un pulso, para el bit=0, la señal en alto tiene que ser muy corto, aproximadamente 350ns y una señal en bajo larga, 800ns. Para el bit=1, se necesita lo contrario, la señal en alto es de 700ns y la señal en bajo es de 600ns. (Estos valores fueron tomados del datasheet de la pantalla). Se necesitan estos valores en ciclos de reloj, debido a que la fpga tiene una frecuencia de 50mHz, 20ns, los valores para el bit 0, son de HL=17 ciclos, LL=40 ciclos, y para el bit 1, HL=35 ciclos, LL=30 ciclos. El tamaño del bit a transmitir es de 24 bits por pixel (recibe todos los datos de color), por lo que son 3072 bits para las dos pantallas.
 
