@@ -85,7 +85,7 @@ La siguiente simulación evalúa el cambio de tiempo a dos velocidades distintas
 
 ![time](https://github.com/user-attachments/assets/b2924804-9dc6-4600-9890-d9f2c2bceda0)
 
-
+### Sensor ultrasonido
 
 ## Sistema de caja negra completo:
 
