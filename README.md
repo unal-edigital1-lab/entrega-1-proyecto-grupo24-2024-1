@@ -68,14 +68,47 @@ La mascota virtual contara con 10 diferentes estados, cada uno sera representado
 *	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
 *	Estado Desolado: todas las necesidadescasi en lo mas bajo posible (Blanco Tenue)
 *	Estado Muerto: todas las necesidades en cero(Blanco)
+![juju](https://github.com/user-attachments/assets/d61c782d-7b9e-4620-99a5-b525930c5934)
 
-## Sistema de caja negra completo:
+El anterior diagrama muestra como cada uno de os valores relevantes del codigo permiten determianr la necesidad final de la mascota virtual a partir de las necesidades y sus respectivos valores
 
+### Control de tiempo
 
-![tamaboring](https://github.com/user-attachments/assets/7ae1a630-79dd-41e6-862a-65f8cbbb5f8f)
+El sistema contará con un módulo acelerador de tiempo. Este módulo tendrá diferentes velocidades y utilizará un registro contador. Con cada flanco positivo del reloj, el contador aumentará, modificando el bit de salida entre 1 y 0, conocido como "Passtime". Esta salida permitirá comunicar al módulo de control para ajustar las necesidades del Tamagushi conforme se complete un ciclo completo de cambios de bit de 1 a 0 y de vuelta a 1.
+* X1 donde contador llegara a 25000000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 1 seg
+* X2 donde contador llegara a 12500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.5 seg
+* X5 donde contador llegara a 5000000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.2 seg
+* X10 donde contador llegara a 2500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.1 seg
+* X50 donde contador llegara a 500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.02 seg
+* X100 donde contador llegara a 250000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.01 seg
+La siguiente simulación evalúa el cambio de tiempo a dos velocidades distintas, que corresponden a las velocidades x2 y x3. Se observa que, en 1.5 segundos, la variable newtime = passtime cambia 4 veces por segundo. Esto ocurre porque el bit cambia de 0 a 1 en 0.25 segundos, completando un ciclo completo en 0.5 segundos. En la segunda parte de la simulación, el cambio de 1 a 0 se realiza en 0.1 segundos, completando el ciclo completo en 0.2 segundos.
 
+![time](https://github.com/user-attachments/assets/455951f3-15f5-493f-a23e-96da89af2ed4)
 
-El proyecto esta conformado por los siguientes elementos:
+### Sensor ultrasonido
+Periférico encargado de generar una única salida es 1 bit que indica una bandera de “Cercanía”, el cual se direccionara por medio del modulo especifico de driver ultrasonido. El sensor ultrasónico será manejado mediante un driver que enviará la señal de echo durante 10 microsegundos. Después de esto, el driver transmitirá 8 pulsos internos. Finalmente, se encenderá una señal de echo que esperará 38 microsegundos para recibir una señal externa, lo que permitirá calcular la distancia de alejamiento entre el sensor y el objeto.
+
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
+
+La siguiente simulacion muestra como se activa la señal trigger por 10 microsegundos, luego se baja para que el sensor envie los 8 pulsos para fonalmente activar echo y esperar una señal de regreso en un rango de tiempo maximo de 38 microsegundos
+
+![sonido](https://github.com/user-attachments/assets/d8bdac96-9d18-4d4a-9358-9400cf41744b)
+
+La siguiente maquina de estados explica el proceso de cambio de estados del sensor y como pasa de los estados send trigger hasta el estado final de delay para recibir la señal final por parte del echo y lanzar la bandera cercania al sistema indicando que existe un objeto cercano
+
+![maquinon](https://github.com/user-attachments/assets/5a812051-9b7d-4c4d-8a8e-785351f3adad)
+
+### Sensor de luz
+Periférico encargado de generar una única salida es 1 bit que indica una bandera de “claridad”. S realizara por medio de una fotoresistencia relacionada con un circuito de un amplificador operacional donde el valor de la fotoresistencia generara modificaciones en la entrada inversora modificando la salida del amplificador dependiendo la cantidad de luz que reciba.
+
+![resis](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/a12246a0-bf46-43af-95c6-a89d2cdcb4a5)
+
+El sensor de luz funciona mediante el siguiente circuito
+![CIRUI](https://github.com/user-attachments/assets/ae45ff9a-a633-4976-b583-f5b7a72d515e)
+* Donde R4 corresponde a la fotosiresistencia que varia entre 0.5ohms(cuando hay luz) y 30ohms(cuando no hay luz)
+* Cuando R4>R3=1K (no luz) la tensión no inversora es mayor que la inversora y la salida del amplificador sera tomada como cero.
+* Cuando R4<R3=1K (luz) la tensión no inversora es menor que la inversora y la salida del amplificador sera tomada como uno (3.3v).
+La salida de este circuito se conocera como una bandera conocida como claridad y sera tomada por uno de los pines de la fpga
 
 ## Sistema de botones: 
 
@@ -83,17 +116,6 @@ Para los 7 botones antirrebote se usa el módulo "debounce", que se encarga de l
 **botondebounced** es la salida del botón cuando ya se encuentra limpia; las variables internas son previous, compare, buttonneg y el contador. previous es una señal que almacena el último estado estable del botón; compare detecta si el estado actual del botón es diferente al último estado almacenado; buttonneg es la versión negada del botón. Ésta sirve para los botones normalmente abiertos. Finalmente, el contador cuenta el tiempo para estabilizar el botón después de detectar un cambio.
 ### Simulaciones: 
 > ![Botones](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Botones.png)
-
-## Sistema de Sensores:
-Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz
- 
-1. **sensor ultrasónico:** Periférico encargado de generar una única salida es 1 bit que indica una bandera de “Cercanía”, el cual se direccionara por medio del modulo especifico de driver ultrasonido.
-
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
-
-2. **sensor de luz:** Periférico encargado de generar una única salida es 1 bit que indica una bandera de “claridad”. S realizara por medio de una fotoresistencia relacionada con un circuito de un amplificador operacional donde el valor de la fotoresistencia generara modificaciones en la entrada inversora modificando la salida del amplificador dependiendo la cantidad de luz que reciba.
-
-![resis](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/a12246a0-bf46-43af-95c6-a89d2cdcb4a5)
 
 
 ## Sistema de visualización: 
@@ -154,7 +176,11 @@ Se realizó el testbench del módulo transmisor para verificar que los pulsos se
 <img src="img/testbench-trans.png" width="500"/>
 <img src="img/testbenchtrans2.png" width="500"/>
 
-## Visualización de velocidad y puntuación
+Para visualizar mejor las conexiones entre los diferentes módulos se realizó el diagrama de caja negra:
+
+<img src="img/imagecontrol" width="500"/>
+
+## Visualización de velocidad y puntuación 
 
 En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
 
@@ -174,36 +200,14 @@ que está encargado de asignarle un valor a la decena/unidad velocidad dependien
 > ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20puntuacion.png)
 
   ### Máquina de estados:
-  > ![Estado 1](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Estado%201%20(1).png)
+  > <img src="img/Estado 1 (1).png" width="650"/>
+  
+  Los estados se suceden secuencialmente. Cada un ciclo del contador, el estado cambia hasta llegar al estado 7; al llegar al estado 7, el ciclo se reinicia en el estado 0 después de un ciclo del contador.
 
-## FPGA Altera Cyclone IV:
-* Funcionalidad: Ejecutar la lógica de control y procesamiento del
-Tamagotchi, incluyendo las máquinas de estados, la gestión de los estados y
-necesidades de la mascota, y la generación de las señales de visualización.
-* Implementación en HDL: La mayor parte de la lógica del Tamagotchi se
-implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
-módulos para organizar el diseño.
+  ### Diagrama de caja negra
+  <img src="img/Cnv.png" width="500"/>
 
-# Especificaciones de Diseño Detalladas
 
-## Necesidades:
-El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
-* Energía
-* salud
-* Comida
-* Entretenimiento
-* higiene
-
-## Estados: 
-La mascota virtual contara con 11 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
-*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
-*	Estado dormido: el tamaguchi se encuentra dormido(morado)
-*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
-*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo(Rojo)
-*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo(Naranja)
-*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
-*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
-*	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
 
 ## Control Puntuación:
 
@@ -219,45 +223,12 @@ Las banderas en el código se utilizan para evitar que se sumen puntos repetidam
 
   ### Simulaciones:
   ![Controlpuntuacion ](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Controlpuntuacion%20.png)
+  
+ ### Diagrama de caja negra
+ <img src="img/cnp.png" width="500"/>
+
+## Sistema de caja negra completo:
 
 
-## Interacciones
-Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
-* Salud: 1 nivel cada 10 minutos
-* Comida: 1 nivel cada 5 minutos
-* Energía: 1 Nivel cada 7 minutos
-* Entretenimiento: 1 Nivel cada 3 minutos
-* Higiene: 1 nivel cada 7 minutos
-* Cabe aclarar que estos tiempos se modifican cuando el modo de velocidad no es X1, por lo que en los otros casos(x2,x5,x10) disminuiran proporcionalmente al valor de velocidad segun la modalidad elegida por el jugador.
+![tamaboring](https://github.com/user-attachments/assets/7ae1a630-79dd-41e6-862a-65f8cbbb5f8f)
 
-
-# Arquitectura del sistema:
-![TRABAJO](https://github.com/user-attachments/assets/84d2d35c-c763-4d6e-b344-3ef9a80ce6c7)
-
-## FPGA Altera Cyclone IV:
-* Funcionalidad: Ejecutar la lógica de control y procesamiento del
-Tamagotchi, incluyendo la máquina de estados, la gestión de los estados y
-necesidades de la mascota, y la generación de las señales de visualización.
-* Implementación en HDL: La mayor parte de la lógica del Tamagotchi se
-implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
-módulos para organizar el diseño.
-* Conexión: La FPGA se conectará a los diversos periféricos a través de
-interfaces digitales.
-## Matriz de LED´s RGB:
-* Funcionalidad: Visualizar de estados y barras de las animaciones del
-Tamagotchi en dos matrices de LEDs 8x8.
-* Implementación en HDL: Se diseñará diferentes modulos en Verilog que se encarguen
-de generar las señales de control y datos necesarios para actualizar la
-matriz de LEDs.
-## Boton reset: 
-* Funcionalidad y implementacion: Cuando el botón de reset se mantiene presionado durante más de 5 segundos en el Tamagotchi, el dispositivo transiciona al estado "bien" y todas las necesidades se establecen en un valor de 7. Además, el contador de puntuación se reinicia a 0. En caso de que el Tamagotchi estuviera en modo de prueba, cambiará al modo "normal", donde las necesidades variarán con el tiempo.
-* Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
-## Boton Test:
-* Funcionalidad y implementacion:Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre los estados definidos anteriormente, con las condiciones especificadas ya sea el estado “hambriento” en donde todas las necesidades estarán en 7 a excepción de la necesidad “comida” que se encontrara en 5, y así sucesivamente.
-* Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
-## Boton Acelerador: 
-Permite acelerar el tiempo en la modalidad de juego del Tamagotchi, afectando las necesidades de forma mas rapida y haciendo que el nivel de juego sea mucho mas complicado.
-## Sensor ultrasonido: 
-* Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “Cercanía”, la cual tiene diferentes interacciones con los modulos diseñados de la fpga.
-## Sensor de luz: 
-* Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “claridad”, la cual tiene diferentes interacciones explicadas anteriormente.
