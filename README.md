@@ -195,34 +195,7 @@ que está encargado de asignarle un valor a la decena/unidad velocidad dependien
   ### Diagrama de caja negra
   <img src="img/Cnv.png" width="500"/>
 
-## FPGA Altera Cyclone IV:
-* Funcionalidad: Ejecutar la lógica de control y procesamiento del
-Tamagotchi, incluyendo las máquinas de estados, la gestión de los estados y
-necesidades de la mascota, y la generación de las señales de visualización.
-* Implementación en HDL: La mayor parte de la lógica del Tamagotchi se
-implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
-módulos para organizar el diseño.
 
-# Especificaciones de Diseño Detalladas
-
-## Necesidades:
-El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
-* Energía
-* salud
-* Comida
-* Entretenimiento
-* higiene
-
-## Estados: 
-La mascota virtual contara con 11 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
-*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
-*	Estado dormido: el tamaguchi se encuentra dormido(morado)
-*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
-*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo(Rojo)
-*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo(Naranja)
-*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
-*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
-*	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
 
 ## Control Puntuación:
 
