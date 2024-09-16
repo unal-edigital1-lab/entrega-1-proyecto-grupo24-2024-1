@@ -86,6 +86,10 @@ La siguiente simulación evalúa el cambio de tiempo a dos velocidades distintas
 ![time](https://github.com/user-attachments/assets/b2924804-9dc6-4600-9890-d9f2c2bceda0)
 
 ### Sensor ultrasonido
+Periférico encargado de generar una única salida es 1 bit que indica una bandera de “Cercanía”, el cual se direccionara por medio del modulo especifico de driver ultrasonido.
+
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
+
 
 ## Sistema de caja negra completo:
 
