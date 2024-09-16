@@ -74,6 +74,8 @@ El anterior diagrama muestra como cada uno de os valores relevantes del codigo p
 
 ### Control de tiempo
 
+El sistema contará con un módulo acelerador de tiempo. Este módulo tendrá diferentes velocidades y utilizará un registro contador. Con cada flanco positivo del reloj, el contador aumentará, modificando el bit de salida entre 1 y 0, conocido como "Passtime". Esta salida permitirá comunicar al módulo de control para ajustar las necesidades del Tamagushi conforme se complete un ciclo completo de cambios de bit de 1 a 0 y de vuelta a 1.
+
 ## Sistema de caja negra completo:
 
 
