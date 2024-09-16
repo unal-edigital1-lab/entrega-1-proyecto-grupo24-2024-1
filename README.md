@@ -68,6 +68,9 @@ La mascota virtual contara con 10 diferentes estados, cada uno sera representado
 *	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
 *	Estado Desolado: todas las necesidadescasi en lo mas bajo posible (Blanco Tenue)
 *	Estado Muerto: todas las necesidades en cero(Blanco)
+![juju](https://github.com/user-attachments/assets/d61c782d-7b9e-4620-99a5-b525930c5934)
+
+  
 
 ## Sistema de caja negra completo:
 
