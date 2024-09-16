@@ -171,7 +171,7 @@ Se realizó el testbench del módulo transmisor para verificar que los pulsos se
 <img src="img/testbench-trans.png" width="500"/>
 <img src="img/testbenchtrans2.png" width="500"/>
 
-## Visualización de velocidad y puntuación
+## Visualización de velocidad y puntuación 
 
 En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
 
@@ -243,7 +243,7 @@ Las banderas en el código se utilizan para evitar que se sumen puntos repetidam
   ![Controlpuntuacion ](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Controlpuntuacion%20.png)
   
  ### Diagrama de caja negra
- <img src="img/Cnp.png" width="600"/>
+ <img src="img/cnp.png" width="600"/>
 
 ## Interacciones
 Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
