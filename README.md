@@ -75,6 +75,13 @@ El anterior diagrama muestra como cada uno de os valores relevantes del codigo p
 ### Control de tiempo
 
 El sistema contará con un módulo acelerador de tiempo. Este módulo tendrá diferentes velocidades y utilizará un registro contador. Con cada flanco positivo del reloj, el contador aumentará, modificando el bit de salida entre 1 y 0, conocido como "Passtime". Esta salida permitirá comunicar al módulo de control para ajustar las necesidades del Tamagushi conforme se complete un ciclo completo de cambios de bit de 1 a 0 y de vuelta a 1.
+* X1 donde contador llegara a 25000000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 1 seg
+* X2 donde contador llegara a 12500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.5 seg
+* X5 donde contador llegara a 5000000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.2 seg
+* X10 donde contador llegara a 2500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.1 seg
+* X50 donde contador llegara a 500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.02 seg
+* X100 donde contador llegara a 250000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.01 seg
+
 
 ## Sistema de caja negra completo:
 
