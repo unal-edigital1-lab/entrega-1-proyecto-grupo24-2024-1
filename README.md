@@ -50,7 +50,7 @@ El control de imagen del proyecto en grosomodo va a encender pixeles específico
 
 <img src="img/Lectúra.png" width="500"/>
 
-En el estado SCOLOR se asigna un color a cada estado, si el pixel no está activo se envía el color negro.
+En el estado SCOLOR se asigna un color a cada estado, si el pixel no está activo se envía el color negro. Para saber si el pixel está activo se hace uso de un multiplexor de 64 (mux64) el cual recibe de entrada la animación y de acuerdo a este selecciona que pixeles de la pantalla están activos.
 
 Cuando se elige el color dependiendo del estado del tamagushi se pasa al estado SENDCOLOR, sin embargo, este estado no solo funciona enviando los bits de datos del color, también elige la animación que se va a mostrar en pantalla.
 
@@ -75,13 +75,20 @@ En código hexadecimal de las animaciones queda así: (El código de las animaci
 
 Estas animaciones van a ir a un multiplexor de 64, este, va a recibir el código de las animaciones y va a seleccionar que pixeles van a estar activos.
 
-Para transmitir los bits para cada led se tiene que enviar un pulso, para el bit=0, la señal en alto tiene que ser muy corto, aproximadamente 350ns y una señal en bajo larga, 800ns. Para el bit=1, se necesita lo contrario, la señal en alto es de 700ns y la señal en bajo es de 600ns. (Estos valores fueron tomados del datasheet de la pantalla). Se necesitan estos valores en ciclos de reloj, debido a que la fpga tiene una frecuencia de 50mHz, 20ns, los valores para el bit 0, son de HL=17 ciclos, LL=40 ciclos, y para el bit 1, HL=35 ciclos, LL=30 ciclos. El tamaño del bit a transmitir es de 24 bits por pixel, por lo que son 3072 bits para las dos pantallas.
+Debido a que las necesidades cambian de diferente forma, se pusieron ciertas necesidades como prioridad, esta comparación se hace en el módulo needcomparator
+
+Para transmitir los bits para cada led se tiene que enviar un pulso, para el bit=0, la señal en alto tiene que ser muy corto, aproximadamente 350ns y una señal en bajo larga, 800ns. Para el bit=1, se necesita lo contrario, la señal en alto es de 700ns y la señal en bajo es de 600ns. (Estos valores fueron tomados del datasheet de la pantalla). Se necesitan estos valores en ciclos de reloj, debido a que la fpga tiene una frecuencia de 50mHz, 20ns, los valores para el bit 0, son de HL=17 ciclos, LL=40 ciclos, y para el bit 1, HL=35 ciclos, LL=30 ciclos. El tamaño del bit a transmitir es de 24 bits por pixel (recibe todos los datos de color), por lo que son 3072 bits para las dos pantallas.
 
 <img src="img/read (1).png" width="500"/>
 
 El diagrama muestra la máquina de estados del transmisor para las pantallas.
 
 El módulo transmisor se encarga de este trabajo. En el código se puede ver como se recibe el dato, lo convierte en ciclos y también hay un contador de cuantos datos se han recibido, así, al llegar al bit 3072 se reinicia el código.
+
+Se realizó el testbench del módulo transmisor para verificar que los pulsos se manden con respecto al dato recibido. 
+
+<img src="testbenchtrans.png" width="500"/>
+<img src="testbenchtrans2.png" width="500"/>
 
 ## Visualización de velocidad y puntuación
 
