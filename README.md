@@ -72,6 +72,8 @@ La mascota virtual contara con 10 diferentes estados, cada uno sera representado
 
 El anterior diagrama muestra como cada uno de os valores relevantes del codigo permiten determianr la necesidad final de la mascota virtual a partir de las necesidades y sus respectivos valores
 
+### Control de tiempo
+
 ## Sistema de caja negra completo:
 
 
