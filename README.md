@@ -191,6 +191,9 @@ que está encargado de asignarle un valor a la decena/unidad velocidad dependien
 
   Los estados se sucedes secuencialmente. Cada un ciclo del contador, el estado cambia hasta llegar al estado 7; al llegar al estado 7, el ciclo se reinicia en el estado 0 después de un ciclo del contador.
 
+  ### Caja negra
+  <img src="img/cnv.png" width="500"/>
+
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
 Tamagotchi, incluyendo las máquinas de estados, la gestión de los estados y
