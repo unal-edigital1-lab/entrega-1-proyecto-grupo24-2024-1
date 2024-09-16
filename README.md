@@ -146,8 +146,8 @@ El módulo transmisor se encarga de este trabajo. En el código se puede ver com
 
 Se realizó el testbench del módulo transmisor para verificar que los pulsos se manden con respecto al dato recibido. 
 
-<img src="testbenchtrans.png" width="500"/>
-<img src="testbenchtrans2.png" width="500"/>
+<img src="img/testbench-trans.png" width="500"/>
+<img src="img/testbenchtrans2.png" width="500"/>
 
 ## Visualización de velocidad y puntuación
 
