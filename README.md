@@ -185,6 +185,8 @@ que está encargado de asignarle un valor a la decena/unidad velocidad dependien
   ### Máquina de estados:
   > ![Estado 1](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Estado%201%20(1).png)
 
+  Los estados se sucedes secuencialmente. Cada un ciclo del contador, el estado cambia hasta llegar al estado 7; al llegar al estado 7, el ciclo se reinicia en el estado 0 después de un ciclo del contador.
+
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
 Tamagotchi, incluyendo las máquinas de estados, la gestión de los estados y
