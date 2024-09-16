@@ -98,7 +98,10 @@ La siguiente maquina de estados explica el proceso de cambio de estados del sens
 
 ![maquinon](https://github.com/user-attachments/assets/5a812051-9b7d-4c4d-8a8e-785351f3adad)
 
+### Sensor de luz
+Periférico encargado de generar una única salida es 1 bit que indica una bandera de “claridad”. S realizara por medio de una fotoresistencia relacionada con un circuito de un amplificador operacional donde el valor de la fotoresistencia generara modificaciones en la entrada inversora modificando la salida del amplificador dependiendo la cantidad de luz que reciba.
 
+![resis](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/a12246a0-bf46-43af-95c6-a89d2cdcb4a5)
 
 
 ## Sistema de botones: 
@@ -110,9 +113,6 @@ Para los 7 botones antirrebote se usa el módulo "debounce", que se encarga de l
 
 
 
-2. **sensor de luz:** Periférico encargado de generar una única salida es 1 bit que indica una bandera de “claridad”. S realizara por medio de una fotoresistencia relacionada con un circuito de un amplificador operacional donde el valor de la fotoresistencia generara modificaciones en la entrada inversora modificando la salida del amplificador dependiendo la cantidad de luz que reciba.
-
-![resis](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/a12246a0-bf46-43af-95c6-a89d2cdcb4a5)
 
 
 ## Sistema de visualización: 
