@@ -195,7 +195,7 @@ que está encargado de asignarle un valor a la decena/unidad velocidad dependien
   
   Los estados se suceden secuencialmente. Cada un ciclo del contador, el estado cambia hasta llegar al estado 7; al llegar al estado 7, el ciclo se reinicia en el estado 0 después de un ciclo del contador.
 
-  ### Caja negra
+  ### Diagrama de caja negra
   <img src="img/Cnv.png" width="500"/>
 
 ## FPGA Altera Cyclone IV:
@@ -241,7 +241,9 @@ Las banderas en el código se utilizan para evitar que se sumen puntos repetidam
 
   ### Simulaciones:
   ![Controlpuntuacion ](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Controlpuntuacion%20.png)
-
+  
+ ### Diagrama de caja negra
+ <img src="img/Cnp.png" width="600"/>
 
 ## Interacciones
 Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
