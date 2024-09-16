@@ -93,13 +93,10 @@ Periférico encargado de generar una única salida es 1 bit que indica una bande
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
 
 
-## Sistema de caja negra completo:
 
 
-![tamaboring](https://github.com/user-attachments/assets/7ae1a630-79dd-41e6-862a-65f8cbbb5f8f)
 
 
-El proyecto esta conformado por los siguientes elementos:
 
 ## Sistema de botones: 
 
@@ -215,33 +212,8 @@ Las banderas en el código se utilizan para evitar que se sumen puntos repetidam
  ### Diagrama de caja negra
  <img src="img/cnp.png" width="500"/>
 
+## Sistema de caja negra completo:
 
-![TRABAJO](https://github.com/user-attachments/assets/84d2d35c-c763-4d6e-b344-3ef9a80ce6c7)
 
-## FPGA Altera Cyclone IV:
-* Funcionalidad: Ejecutar la lógica de control y procesamiento del
-Tamagotchi, incluyendo la máquina de estados, la gestión de los estados y
-necesidades de la mascota, y la generación de las señales de visualización.
-* Implementación en HDL: La mayor parte de la lógica del Tamagotchi se
-implementará en Verilog dentro de la FPGA, utilizando módulos y sub-
-módulos para organizar el diseño.
-* Conexión: La FPGA se conectará a los diversos periféricos a través de
-interfaces digitales.
-## Matriz de LED´s RGB:
-* Funcionalidad: Visualizar de estados y barras de las animaciones del
-Tamagotchi en dos matrices de LEDs 8x8.
-* Implementación en HDL: Se diseñará diferentes modulos en Verilog que se encarguen
-de generar las señales de control y datos necesarios para actualizar la
-matriz de LEDs.
-## Boton reset: 
-* Funcionalidad y implementacion: Cuando el botón de reset se mantiene presionado durante más de 5 segundos en el Tamagotchi, el dispositivo transiciona al estado "bien" y todas las necesidades se establecen en un valor de 7. Además, el contador de puntuación se reinicia a 0. En caso de que el Tamagotchi estuviera en modo de prueba, cambiará al modo "normal", donde las necesidades variarán con el tiempo.
-* Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
-## Boton Test:
-* Funcionalidad y implementacion:Al presionar el botón test por mas de 5 segundos, el tamaguchi entra en modo “test” en donde comienza a saltar entre los estados definidos anteriormente, con las condiciones especificadas ya sea el estado “hambriento” en donde todas las necesidades estarán en 7 a excepción de la necesidad “comida” que se encontrara en 5, y así sucesivamente.
-* Conexión: pin de entrada/salida (I/O) en la FPGA conectado directamente al botón.
-## Boton Acelerador: 
-Permite acelerar el tiempo en la modalidad de juego del Tamagotchi, afectando las necesidades de forma mas rapida y haciendo que el nivel de juego sea mucho mas complicado.
-## Sensor ultrasonido: 
-* Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “Cercanía”, la cual tiene diferentes interacciones con los modulos diseñados de la fpga.
-## Sensor de luz: 
-* Funcionalidad y implementacion: Da un periférico encargado de la lectura del sensor, su única salida es 1 bit que indica una bandera de “claridad”, la cual tiene diferentes interacciones explicadas anteriormente.
+![tamaboring](https://github.com/user-attachments/assets/7ae1a630-79dd-41e6-862a-65f8cbbb5f8f)
+
