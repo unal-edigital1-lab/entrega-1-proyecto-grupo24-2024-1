@@ -243,7 +243,7 @@ Las banderas en el código se utilizan para evitar que se sumen puntos repetidam
   ![Controlpuntuacion ](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Controlpuntuacion%20.png)
   
  ### Diagrama de caja negra
- <img src="img/cnp.png" width="600"/>
+ <img src="img/cnp.png" width="500"/>
 
 ## Interacciones
 Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
