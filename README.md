@@ -187,7 +187,7 @@ que está encargado de asignarle un valor a la decena/unidad velocidad dependien
 > ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20puntuacion.png)
 
   ### Máquina de estados:
-  > <img src="img/Estado 1 (1).png" width="500"/>
+  > <img src="img/Estado 1 (1).png" width="650"/>
   
   Los estados se suceden secuencialmente. Cada un ciclo del contador, el estado cambia hasta llegar al estado 7; al llegar al estado 7, el ciclo se reinicia en el estado 0 después de un ciclo del contador.
 
