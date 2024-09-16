@@ -88,12 +88,11 @@ La siguiente simulación evalúa el cambio de tiempo a dos velocidades distintas
 ### Sensor ultrasonido
 Periférico encargado de generar una única salida es 1 bit que indica una bandera de “Cercanía”, el cual se direccionara por medio del modulo especifico de driver ultrasonido. El sensor ultrasónico será manejado mediante un driver que enviará la señal de echo durante 10 microsegundos. Después de esto, el driver transmitirá 8 pulsos internos. Finalmente, se encenderá una señal de echo que esperará 38 microsegundos para recibir una señal externa, lo que permitirá calcular la distancia de alejamiento entre el sensor y el objeto.
 
-
-
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/d51271f1-0765-40f9-9724-864dc0c1e111) 
 
+La siguiente simulacion muestra como se activa la señal trigger por 10 microsegundos, luego se baja para que el sensor envie los 8 pulsos para fonalmente activar echo y esperar una señal de regreso en un rango de tiempo maximo de 38 microsegundos
 
-
+![time](https://github.com/user-attachments/assets/455951f3-15f5-493f-a23e-96da89af2ed4)
 
 
 
