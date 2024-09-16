@@ -81,6 +81,10 @@ El sistema contará con un módulo acelerador de tiempo. Este módulo tendrá di
 * X10 donde contador llegara a 2500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.1 seg
 * X50 donde contador llegara a 500000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.02 seg
 * X100 donde contador llegara a 250000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.01 seg
+La siguiente simulación evalúa el cambio de tiempo a dos velocidades distintas, que corresponden a las velocidades x2 y x3. Se observa que, en 1.5 segundos, la variable newtime = passtime cambia 4 veces por segundo. Esto ocurre porque el bit cambia de 0 a 1 en 0.25 segundos, completando un ciclo completo en 0.5 segundos. En la segunda parte de la simulación, el cambio de 1 a 0 se realiza en 0.1 segundos, completando el ciclo completo en 0.2 segundos.
+
+![time](https://github.com/user-attachments/assets/b2924804-9dc6-4600-9890-d9f2c2bceda0)
+
 
 
 ## Sistema de caja negra completo:
