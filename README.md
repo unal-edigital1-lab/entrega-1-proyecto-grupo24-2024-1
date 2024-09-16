@@ -70,7 +70,7 @@ La mascota virtual contara con 10 diferentes estados, cada uno sera representado
 *	Estado Muerto: todas las necesidades en cero(Blanco)
 ![juju](https://github.com/user-attachments/assets/d61c782d-7b9e-4620-99a5-b525930c5934)
 
-  
+El anterior diagrama muestra como cada uno de os valores relevantes del codigo permiten determianr la necesidad final de la mascota virtual a partir de las necesidades y sus respectivos valores
 
 ## Sistema de caja negra completo:
 
