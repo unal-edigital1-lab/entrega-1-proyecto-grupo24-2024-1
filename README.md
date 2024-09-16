@@ -108,6 +108,7 @@ El sensor de luz funciona mediante el siguiente circuito
 * Donde R4 corresponde a la fotosiresistencia que varia entre 0.5ohms(cuando hay luz) y 30ohms(cuando no hay luz)
 * Cuando R4>R3=1K (no luz) la tensión no inversora es mayor que la inversora y la salida del amplificador sera tomada como cero.
 * Cuando R4<R3=1K (luz) la tensión no inversora es menor que la inversora y la salida del amplificador sera tomada como uno (3.3v).
+La salida de este circuito se conocera como una bandera conocida como claridad y sera tomada por uno de los pines de la fpga
 
 ## Sistema de botones: 
 
