@@ -143,6 +143,7 @@ Para la animación,  esta animación depende del estado del tamagushi y también
 <img src="img/Animación2.png" width="500"/>
 <img src="img/Animación3.png" width="500"/>
 <img src="img/Animación4.png" width="500"/>
+<img src="img/Animación5.png" width="500"/>
 
 Se dibujaron las visualizaciones, se escribieron en binario y luego se pasó esté código a hexadecimal.
 
