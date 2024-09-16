@@ -103,6 +103,11 @@ Periférico encargado de generar una única salida es 1 bit que indica una bande
 
 ![resis](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/assets/84733932/a12246a0-bf46-43af-95c6-a89d2cdcb4a5)
 
+El sensor de luz funciona mediante el siguiente circuito
+![CIRUI](https://github.com/user-attachments/assets/ae45ff9a-a633-4976-b583-f5b7a72d515e)
+* Donde R4 corresponde a la fotosiresistencia que varia entre 0.5ohms(cuando hay luz) y 30ohms(cuando no hay luz)
+* Cuando R4>R3=1K (no luz) la tensión no inversora es mayor que la inversora y la salida del amplificador sera tomada como cero.
+* Cuando R4<R3=1K (luz) la tensión no inversora es menor que la inversora y la salida del amplificador sera tomada como uno (3.3v).
 
 ## Sistema de botones: 
 
@@ -110,9 +115,6 @@ Para los 7 botones antirrebote se usa el módulo "debounce", que se encarga de l
 **botondebounced** es la salida del botón cuando ya se encuentra limpia; las variables internas son previous, compare, buttonneg y el contador. previous es una señal que almacena el último estado estable del botón; compare detecta si el estado actual del botón es diferente al último estado almacenado; buttonneg es la versión negada del botón. Ésta sirve para los botones normalmente abiertos. Finalmente, el contador cuenta el tiempo para estabilizar el botón después de detectar un cambio.
 ### Simulaciones: 
 > ![Botones](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Botones.png)
-
-
-
 
 
 ## Sistema de visualización: 
