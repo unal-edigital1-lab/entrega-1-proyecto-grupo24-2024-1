@@ -165,6 +165,10 @@ Se realizó el testbench del módulo transmisor para verificar que los pulsos se
 <img src="img/testbench-trans.png" width="500"/>
 <img src="img/testbenchtrans2.png" width="500"/>
 
+Para visualizar mejor las conexiones entre los diferentes módulos se realizó el diagrama de caja negra:
+
+<img src="img/imagecontrol" width="500"/>
+
 ## Visualización de velocidad y puntuación 
 
 En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
