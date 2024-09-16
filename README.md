@@ -83,7 +83,7 @@ El sistema contará con un módulo acelerador de tiempo. Este módulo tendrá di
 * X100 donde contador llegara a 250000 Flancos positivos a una frecuencia de 50 Mhz- habra un cambio cada 0.01 seg
 La siguiente simulación evalúa el cambio de tiempo a dos velocidades distintas, que corresponden a las velocidades x2 y x3. Se observa que, en 1.5 segundos, la variable newtime = passtime cambia 4 veces por segundo. Esto ocurre porque el bit cambia de 0 a 1 en 0.25 segundos, completando un ciclo completo en 0.5 segundos. En la segunda parte de la simulación, el cambio de 1 a 0 se realiza en 0.1 segundos, completando el ciclo completo en 0.2 segundos.
 
-![time](https://github.com/user-attachments/assets/b2924804-9dc6-4600-9890-d9f2c2bceda0)
+
 
 ### Sensor ultrasonido
 Periférico encargado de generar una única salida es 1 bit que indica una bandera de “Cercanía”, el cual se direccionara por medio del modulo especifico de driver ultrasonido. El sensor ultrasónico será manejado mediante un driver que enviará la señal de echo durante 10 microsegundos. Después de esto, el driver transmitirá 8 pulsos internos. Finalmente, se encenderá una señal de echo que esperará 38 microsegundos para recibir una señal externa, lo que permitirá calcular la distancia de alejamiento entre el sensor y el objeto.
