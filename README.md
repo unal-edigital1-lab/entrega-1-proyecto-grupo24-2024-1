@@ -4,13 +4,72 @@
 * Tait Mozuca Tamayo - 1193560405
 * Leidy Pinto Ramos - 1000787494
   
-## Descripción general
-Un Tamagotchi es un aparato electrónico con forma de huevo donde aparece una mascota virtual que se puede cuidar usando generalmente 3 botones. En nuestro proyecto, tratamos de emular este proyecto usando una FPGA Cyclone IV EP4CE6E22C8N y diversos sensores y elementos electrónicos en los que ahondaremos en este documento.
-Utilizamos 7 botones que cumplirán las funciones de alimentar, curar, limpiar, dormir, reset, test y acelerador.
+## Descripción general y especificaciones de los sistemas que conforman el proyecto:
+Un Tamagotchi es un aparato electrónico con forma de huevo en el que aparece una mascota virtual que se puede cuidar mediante generalmente tres botones. En nuestro proyecto, buscamos emular este dispositivo utilizando una FPGA Cyclone IV EP4CE6E22C8N y diversos sensores y elementos electrónicos, los cuales detallaremos en este documento.
 
-# Especificación de los sistemas que conforman el proyecto:
+El proyecto cuenta con cuatro botones, de los cuales cuatro estarán destinados a interactuar directamente con las necesidades del Tamagotchi (alimentar, dormir, curar y jugar), un boton cambiador de tiempo, un boton test que permite examinar cada una de las condiciones de la mascota virtual y un boton de reset completo del juego. Además, contará con dos pantallas de matriz de LEDs WS2812, cada una de 8x8 píxeles: una mostrará el personaje y la otra las barras y estados de energía. También incluye dos sensores externos: un sensor de luz y un sensor de movimiento ultrasónico para generar interacción con el juego.
+![INICIO](https://github.com/user-attachments/assets/dadbe043-c4e5-4baa-ba16-1a29e510a191)
 
-## Sistema de caja negra:
+El diagrama anterior demuestra el funcionamiento global del proyecto. Los tres módulos mostrados serán los encargados de proporcionar la información adecuada a la FPGA para comunicar los botones y sensores con la imagen de la mascota virtual. Es de gran importancia tener en cuenta la cantidad de bits a utilizar y que cada uno de estos módulos contiene submódulos clave que generan distintas salidas relevantes para el funcionamiento del proyecto y permiten el funcionamiento básico del Tamagotchi.
+
+Es importante considerar la cantidad de bits de entrada y salida. Los botones utilizarán 8 bits, ya que cada botón proporcionará un bit de información al sistema. Los sensores se comunicarán mediante un bit de bandera que notificará a la FPGA sobre los cambios en el exterior; un bit será para el sensor de movimiento y otro bit para el sensor de luz.
+
+En total, se utilizarán quince bits para las necesidades, distribuidos en 3 bits por cada una (salud, entretenimiento, energía, alimentación e higiene). Además, se asignarán cuatro bits para el estado del Tamagotchi, acorde al nivel de sus necesidades. Finalmente, las salidas consistirán en un bit de datos que transmitirá la información a las pantallas y 15 bits distribuidos entre los 8 ánodos y el display de siete segmentos.
+
+## Funcionamiento controlador principal: 
+### Control pricipal
+El control principal contendra los principales modulos del proyecto los cuales lo conforma el control principal, logica de estado, driver del sensor ultrasonido y control de tiempo que seran explicados uno por a uno a continuación
+La siguiente imagen describe el sistema de caja negra del controlador principal, con cada una de sus entradas y módulos principales, cuyos salidas principales están relacionadas con el estado de ánimo del Tamagotchi
+
+![OTRAS](https://github.com/user-attachments/assets/d0a8df7a-0afe-4b3f-99dd-d3d855c686bf)
+
+El módulo principal se encargará de reducir y aumentar los niveles de necesidades del Tamagotchi a lo largo del tiempo, además de permitir el ajuste de estos niveles mediante el uso de botones y sensores periféricos externos. También habilita el funcionamiento del modo de prueba, que evalúa cada uno de los posibles estados del Tamagotchi, y el modo de reinicio, que restablece todas las condiciones del Tamagotchi a su estado inicial. Estos botones deben ser oprimidos de forma continua durante al menos 5 segundos para garantizar su funcionamiento.
+## Necesidades:
+El sistema tendra 4 necesidades(se mostrarán en barras de estado en la segunda pantalla led) cada una tiene un nivel de satisfacción del 1 como nivel mínimo y 8 como el máximo.
+* Energía
+* salud
+* Comida
+* Entretenimiento
+* higiene
+
+
+  ## Interacciones
+Las necesidades bajaran automáticamente con el tiempo de la siguiente manera:
+* Salud: -1 nivel cada 10 minutos
+* Comida: -1 nivel cada 5 minutos
+* Energía: -1 Nivel cada 7 minutos
+* Entretenimiento: -1 Nivel cada 3 minutos
+* Higiene: -1 nivel cada 7 minutos
+* Cabe aclarar que estos tiempos se modifican cuando el modo de velocidad no es X1, por lo que en los otros casos(x2,x5,x10) disminuiran proporcionalmente al valor de velocidad segun la modalidad elegida por el jugador.
+
+El comportamiento de la velocidad sera explicado mas adelaante para el modulo de controlador de tiempo que determina como pasa el tiempo en la modalidad de juego de la mascota virtual
+
+
+![eeeeeeee](https://github.com/user-attachments/assets/16a0c39d-da7e-42a2-af07-bc875d8b572f)
+![hola](https://github.com/user-attachments/assets/01290c68-0d7e-4d88-b188-9730f1e4de31)
+
+Los diagramas anteriores demuestra el funcionamiento del módulo principal, el cual utiliza el flanco de subida del reloj para incrementar distintos tipos de contadores. Cuando los contadores alcanzan ciertos valores, las necesidades disminuyen. Además, se describe cómo la función de dormir dependerá de que ambos sensores estén inactivos y de que el estado de salud y el de alimentación sean mayores a 2. También se detallan los botones de prueba y reinicio, así como sus restricciones respecto al estado del modo y cómo afectan a los contadores y botones.
+
+![contolll](https://github.com/user-attachments/assets/e38e090b-394d-4431-97f7-c964b34a0e8f)
+
+La anterior simulación muestra, en cambio, el comportamiento del control principal conforme se presionan los botones. En esta simulación, se observa cómo los niveles de energía pasan de 6 a 7 en la puntuación.
+
+### Logica de estado
+El modulo logica de estado maneja cierta cantidad de condiciones que permiten otorgar bit a una serie de registros que se suman de forma acomulativa, cuando estos rangos son superados segun las necesidades que arroja el modulo control principal, el resultado acomulatuvo determinara el tipo de estado que corresponde a los siguientes:
+### Estados: 
+La mascota virtual contara con 10 diferentes estados, cada uno sera representado con un color especifico para ser facilmente identificado por el jugador:
+*	Estado cansado: la necesidad de energía se encuentra en 5 o por debajo(Azul)
+*	Estado dormido: el tamaguchi se encuentra dormido(morado)
+*	Estado Hambriento: la necesidad de comida se encuentra en 5 o por debajo(Amarillo)
+*	Estado enfermo: la necesidad de salud se encuentra en 5 o por debajo(Rojo)
+*	Estado aburrido: la necesidad de entretenimiento se encuentra en 5 o por debajo(Naranja)
+*	Estado sucio: la necesidad de Higiene se encuentra en 5 o por debajo(Csfe)
+*	Estado bien: Todas las necesidades se encuentran por encima del nivel 5, y la mascota se Encuentra generalmente satisfecha(Verde)
+*	Estado excelente: todas las necesidades están en el máximo posible(Verde Claro)
+*	Estado Desolado: todas las necesidadescasi en lo mas bajo posible (Blanco Tenue)
+*	Estado Muerto: todas las necesidades en cero(Blanco)
+
+## Sistema de caja negra completo:
 
 
 ![tamaboring](https://github.com/user-attachments/assets/7ae1a630-79dd-41e6-862a-65f8cbbb5f8f)
@@ -23,7 +82,7 @@ El proyecto esta conformado por los siguientes elementos:
 Para los 7 botones antirrebote se usa el módulo "debounce", que se encarga de limpiar la señal del botón y eliminar los rebotes que se producen al presionarlo.
 **botondebounced** es la salida del botón cuando ya se encuentra limpia; las variables internas son previous, compare, buttonneg y el contador. previous es una señal que almacena el último estado estable del botón; compare detecta si el estado actual del botón es diferente al último estado almacenado; buttonneg es la versión negada del botón. Ésta sirve para los botones normalmente abiertos. Finalmente, el contador cuenta el tiempo para estabilizar el botón después de detectar un cambio.
 ### Simulaciones: 
-> ![Botones](https://github.com/user-attachments/assets/027c1b6b-0126-4bb8-be33-bf05a8ca8316)
+> ![Botones](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Botones.png)
 
 ## Sistema de Sensores:
 Se contarán con 2 sensores, 1 sensor ultrasónico HC-SR04 y un sensor de luz
@@ -95,22 +154,22 @@ Se realizó el testbench del módulo transmisor para verificar que los pulsos se
 En esta sección del proyecto, con la ayuda de un módulo covertidor BCD podemos primero asignar los valores correspondientes en la primera parte del código, y después visualizar con la ayuda del bloque **control** el número correspondiente al nivel de velocidad y a la puntuación en el display de 7 segmentos dividiéndolo en miles, centenas, decenas y unidades. Aunque usamos 8 ánodos, sólo tendremos activos 6 de ellos.
 
 Para el caso de la velocidad, tendremos el siguiente bloque de código:
-> ![image](https://github.com/user-attachments/assets/4b00287f-d20b-45b9-8975-a44c4f6d3dff)
+> ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/velocidad.png)
 
-que está encargado de asignarle un valor a numeroactual dependiendo del valor binario de 3 bits que tengamos en el momento. Por lo tanto, en vez de tener una representación del número binario a decimal en la simulación, vamos a obtener el número que se le fue asignado en el bloque de código, y luego expresarlo en decenas y unidades.
+que está encargado de asignarle un valor a la decena/unidad velocidad dependiendo del número binario de 3 bits que tengamos en el momento. Por lo tanto, en vez de tener una representación del número binario a decimal en la simulación, vamos a obtener el número que se le fue asignado en el bloque de código, y luego expresarlo en decenas y unidades.
 
   ### Simulaciones: 
   #### Visualización de velocidad: 
 
-  > ![Visualizacion velocidad](https://github.com/user-attachments/assets/afc9d3d5-20f3-4775-97b4-6bc328139e50)
+  > ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20velocidad.png)
 
   Como se puede ver, en vez de mostrar el equivalente del número binario en número actual o en decenas/unidades, se muestra el valor que se le fue asignado a ese número en el bloque anteriormente mencionado.
 
   #### Visualización de puntuación:
-> ![Visualizacion puntuacion](https://github.com/user-attachments/assets/abfc1b85-e00c-423f-9691-05e9b1c0a278)
+> ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Visualizacion%20puntuacion.png)
 
   ### Máquina de estados:
-  > ![Estado 1](https://github.com/user-attachments/assets/506563cf-bcf4-4ee0-aa8e-66399df419ea)
+  > ![Estado 1](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Estado%201%20(1).png)
 
 ## FPGA Altera Cyclone IV:
 * Funcionalidad: Ejecutar la lógica de control y procesamiento del
@@ -154,7 +213,7 @@ Para la puntuación total, que es la suma de los valores de la salud, alimentaci
 Las banderas en el código se utilizan para evitar que se sumen puntos repetidamente dentro del mismo ciclo de reloj. La banderabus, por otro lado, funciona para que el bonus se otorgue sólo una vez en cuando se cumple la condición requerida.
 
   ### Simulaciones:
-  ![Controlpuntuacion ](https://github.com/user-attachments/assets/334b7944-f83f-4293-833b-0aac57adf1a2)
+  ![Controlpuntuacion ](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo24-2024-1/blob/main/img/Controlpuntuacion%20.png)
 
 
 ## Interacciones
