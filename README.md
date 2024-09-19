@@ -12,6 +12,8 @@ El proyecto cuenta con cuatro botones, de los cuales cuatro estarán destinados 
 ![CAJAS](https://github.com/user-attachments/assets/07b06a08-ac5b-4932-a287-e296a8666e34)
 
 
+[caja.negra.final.CAMBIOS.pdf](https://github.com/user-attachments/files/17053191/caja.negra.final.CAMBIOS.pdf)
+
 
 El diagrama anterior demuestra el funcionamiento global del proyecto. Los  módulos mostrados serán los encargados de proporcionar la información adecuada a la FPGA para comunicar los botones y sensores con la imagen de la mascota virtual. Es de gran importancia tener en cuenta la cantidad de bits a utilizar y que cada uno de estos módulos contiene submódulos clave que generan distintas salidas relevantes para el funcionamiento del proyecto y permiten el funcionamiento básico del Tamagotchi.
 
