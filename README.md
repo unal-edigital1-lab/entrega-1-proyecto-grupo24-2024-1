@@ -8,9 +8,12 @@
 Un Tamagotchi es un aparato electrónico con forma de huevo en el que aparece una mascota virtual que se puede cuidar mediante generalmente tres botones. En nuestro proyecto, buscamos emular este dispositivo utilizando una FPGA Cyclone IV EP4CE6E22C8N y diversos sensores y elementos electrónicos, los cuales detallaremos en este documento.
 
 El proyecto cuenta con cuatro botones, de los cuales cuatro estarán destinados a interactuar directamente con las necesidades del Tamagotchi (alimentar, dormir, curar y jugar), un boton cambiador de tiempo, un boton test que permite examinar cada una de las condiciones de la mascota virtual y un boton de reset completo del juego. Además, contará con dos pantallas de matriz de LEDs WS2812, cada una de 8x8 píxeles: una mostrará el personaje y la otra las barras y estados de energía. También incluye dos sensores externos: un sensor de luz y un sensor de movimiento ultrasónico para generar interacción con el juego.
-![INICIO](https://github.com/user-attachments/assets/dadbe043-c4e5-4baa-ba16-1a29e510a191)
 
-El diagrama anterior demuestra el funcionamiento global del proyecto. Los tres módulos mostrados serán los encargados de proporcionar la información adecuada a la FPGA para comunicar los botones y sensores con la imagen de la mascota virtual. Es de gran importancia tener en cuenta la cantidad de bits a utilizar y que cada uno de estos módulos contiene submódulos clave que generan distintas salidas relevantes para el funcionamiento del proyecto y permiten el funcionamiento básico del Tamagotchi.
+
+[caja negra final CAMBIOS.pdf](https://github.com/user-attachments/files/17053177/caja.negra.final.CAMBIOS.pdf)
+
+
+El diagrama anterior demuestra el funcionamiento global del proyecto. Los  módulos mostrados serán los encargados de proporcionar la información adecuada a la FPGA para comunicar los botones y sensores con la imagen de la mascota virtual. Es de gran importancia tener en cuenta la cantidad de bits a utilizar y que cada uno de estos módulos contiene submódulos clave que generan distintas salidas relevantes para el funcionamiento del proyecto y permiten el funcionamiento básico del Tamagotchi.
 
 Es importante considerar la cantidad de bits de entrada y salida. Los botones utilizarán 8 bits, ya que cada botón proporcionará un bit de información al sistema. Los sensores se comunicarán mediante un bit de bandera que notificará a la FPGA sobre los cambios en el exterior; un bit será para el sensor de movimiento y otro bit para el sensor de luz.
 
