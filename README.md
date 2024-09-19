@@ -26,7 +26,8 @@ En total, se utilizarán quince bits para las necesidades, distribuidos en 3 bit
 El control principal contendra los principales modulos del proyecto los cuales lo conforma el control principal, logica de estado, driver del sensor ultrasonido y control de tiempo que seran explicados uno por a uno a continuación
 La siguiente imagen describe el sistema de caja negra del controlador principal, con cada una de sus entradas y módulos principales, cuyos salidas principales están relacionadas con el estado de ánimo del Tamagotchi
 
-[caja negra CHEVRE.pdf](https://github.com/user-attachments/files/17053229/caja.negra.CHEVRE.pdf)
+![NEGRA CHEVRE](https://github.com/user-attachments/assets/8e3d4e5b-fc54-4ecb-8558-599e77cc0ac6)
+
 
 
 El módulo principal se encargará de reducir y aumentar los niveles de necesidades del Tamagotchi a lo largo del tiempo, además de permitir el ajuste de estos niveles mediante el uso de botones y sensores periféricos externos. También habilita el funcionamiento del modo de prueba, que evalúa cada uno de los posibles estados del Tamagotchi, y el modo de reinicio, que restablece todas las condiciones del Tamagotchi a su estado inicial. Estos botones deben ser oprimidos de forma continua durante al menos 5 segundos para garantizar su funcionamiento.
