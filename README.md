@@ -9,8 +9,8 @@ Un Tamagotchi es un aparato electrónico con forma de huevo en el que aparece un
 
 El proyecto cuenta con cuatro botones, de los cuales cuatro estarán destinados a interactuar directamente con las necesidades del Tamagotchi (alimentar, dormir, curar y jugar), un boton cambiador de tiempo, un boton test que permite examinar cada una de las condiciones de la mascota virtual y un boton de reset completo del juego. Además, contará con dos pantallas de matriz de LEDs WS2812, cada una de 8x8 píxeles: una mostrará el personaje y la otra las barras y estados de energía. También incluye dos sensores externos: un sensor de luz y un sensor de movimiento ultrasónico para generar interacción con el juego.
 
+![CAJAS](https://github.com/user-attachments/assets/07b06a08-ac5b-4932-a287-e296a8666e34)
 
-[caja negra final CAMBIOS.pdf](https://github.com/user-attachments/files/17053177/caja.negra.final.CAMBIOS.pdf)
 
 
 El diagrama anterior demuestra el funcionamiento global del proyecto. Los  módulos mostrados serán los encargados de proporcionar la información adecuada a la FPGA para comunicar los botones y sensores con la imagen de la mascota virtual. Es de gran importancia tener en cuenta la cantidad de bits a utilizar y que cada uno de estos módulos contiene submódulos clave que generan distintas salidas relevantes para el funcionamiento del proyecto y permiten el funcionamiento básico del Tamagotchi.
